@@ -7,6 +7,18 @@ class Member {
     private $personalNumber;
     private $id;
 
+    public function __construct($cName, $cPersonalNumber, $cId)
+    {
+        $this->setName($cName);
+        $this->setPersonalNumber($cPersonalNumber);
+        $this->setId($cId);
+    }
+
+    public function memberString(){
+
+        return "Name: " . $this->name . ", Personal Number: " . $this->personalNumber . ", ID: " . $this->id;
+    }
+
     public function getName() {
         return  $this->name;
     }
@@ -21,20 +33,12 @@ class Member {
     }
 
     public function getPersonalNumber() {
-        return $personalNumber;
-    }
-
-    public function setPersonalNumber($argPnr) {
-        if(isValidPNR($argPnr) === TRUE){
-            $this->personalNumber = $argPnr;
-        } else {
-            throw new \Exception("Personal number not valid, please try again.");
-        }
+        return $this->personalNumber;
     }
 
     function isValidPNR($pnr) {
         if( 1 == 1
-        //TODO: validation code here
+            //TODO: validation code here
         ){
             return TRUE;
         } else {
@@ -42,13 +46,22 @@ class Member {
         }
     }
 
+    public function setPersonalNumber($argPnr) {
+        if($this->isValidPNR($argPnr) === TRUE){
+            $this->personalNumber = $argPnr;
+        } else {
+            throw new \Exception("Personal number not valid, please try again.");
+        }
+    }
+
+
     public function getId() {
         return  $this->id;
     }
 
     public function setId($argId) {
         //TODO: more extensive validation
-        if(is_numeric($argId) && argId > 0){
+        if(is_numeric($argId) && $argId > 0){
             $this->id = $argId;
             return "User ID set to " . $argId;
         } else {
