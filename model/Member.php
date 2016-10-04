@@ -1,4 +1,20 @@
 <?php
+<<<<<<< HEAD
+/**
+ * Created by PhpStorm.
+ * User: sebastiangustavsson
+ * Date: 2016-10-04
+ * Time: 09:56
+ */
+
+namespace model;
+
+
+class Member
+{
+
+}
+=======
 class Member {
 
     private $name;
@@ -57,3 +73,4 @@ class Member {
     }
 }
 ?>
+>>>>>>> 5ce530760bad05bb226f082626ebd936a144f611
