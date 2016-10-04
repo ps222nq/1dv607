@@ -1,0 +1,21 @@
+<?php
+
+namespace test;
+
+use model\Member;
+
+require_once("../model/Member.php");
+
+class MemberTest {
+
+public function __construct()
+{
+    $this->shouldCreateMember();
+}
+
+private function shouldCreateMember() {
+    $expected = "Glenn";
+    $testMember = new Member("Glenn", "19000101-0101", 1);
+    assert($expected == $testMember->getName(), "Name should equal expected");
+}
+}

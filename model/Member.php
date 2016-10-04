@@ -6,6 +6,7 @@ class Member {
     private $name;
     private $personalNumber;
     private $id;
+    private $assets = array();
 
     public function __construct($cName, $cPersonalNumber, $cId)
     {
@@ -37,12 +38,12 @@ class Member {
     }
 
     function isValidPNR($pnr) {
-        $yearOf
+        $yearOfBirth = 0;
         if(strlen($pnr) !== 13) {
             throw new \Exception("Please enter personal number in format YYYYMMDD-XXXX");
         }
 
-        }
+
     }
 
     public function setPersonalNumber($argPnr) {

@@ -38,4 +38,5 @@ class MemberController {
         //TODO: implement
     }
 
+    //TODO: add method for adding to assets
 }

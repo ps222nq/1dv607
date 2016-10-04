@@ -13,5 +13,6 @@ error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
 new \test\BoatTest();
+//new \test\memberTest();
 
 ?>
