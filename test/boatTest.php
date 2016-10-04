@@ -21,6 +21,7 @@ public function boatTest(){
     }
 
     public function tryConstructor(){
+        $boat = new model\Boat("Other", 123);
         assert($this->boatClass['type'] === "Other", "Assert test");
     }
 }

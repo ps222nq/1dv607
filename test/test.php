@@ -6,8 +6,12 @@
  * Time: 11:41
  */
 
+require_once('./boatTest.php');
+
 //Error reporting ON
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
+
+
 
 ?>

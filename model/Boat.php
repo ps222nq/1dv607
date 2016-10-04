@@ -24,28 +24,23 @@ class Boat
         $this->length = $length;
     }
 
-<<<<<<< HEAD
-=======
 
     public function getLength(){
         return $this->length;
     }
 
 
->>>>>>> e1973706d7910f039a4937683672a03a78037829
     public function setLength($length){
         $this->validateLength();
         $this->length = $length;
     }
 
-<<<<<<< HEAD
+
     public function setType($type) {
         $this->validaType($type);
         $this->type = $type;
     }
 
-=======
->>>>>>> e1973706d7910f039a4937683672a03a78037829
 
     private function validateLength($length){
         if (!is_numeric($length)) {
@@ -54,8 +49,6 @@ class Boat
     }
 
 
-<<<<<<< HEAD
-=======
     public function getType(){
         return $this->type;
     }
@@ -67,7 +60,6 @@ class Boat
     }
 
 
->>>>>>> e1973706d7910f039a4937683672a03a78037829
     private function validateype($type){
         if (!is_string($type)) {
             throw new \Exception("Type must be a string");
@@ -75,7 +67,6 @@ class Boat
     }
 
 
-<<<<<<< HEAD
     public function getType(){
         return $this->type;
     }
@@ -84,11 +75,4 @@ class Boat
     public function getLength(){
         return $this->length;
     }
-=======
-
-
->>>>>>> e1973706d7910f039a4937683672a03a78037829
-
-
-
 }
