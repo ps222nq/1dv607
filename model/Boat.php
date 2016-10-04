@@ -9,8 +9,7 @@
 namespace model;
 
 
-class Boat
-{
+class Boat {
     private $type;
     private $length;
 

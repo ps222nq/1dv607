@@ -7,7 +7,7 @@
  */
 namespace test;
 
-require_once('./boatTest.php');
+require_once('./model/Boat.php');
 
 class BoatTest {
 
