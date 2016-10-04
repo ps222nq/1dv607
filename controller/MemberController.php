@@ -1,5 +1,7 @@
 <?php
 
+namespace controller;
+
 require_once("../model/Member.php");
 
 class MemberController {
@@ -16,7 +18,7 @@ class MemberController {
             $message .= "Created new Member: " . $newMember->toString();
 
         }
-        catch (Exception $e) {
+        catch (\Exception $e) {
             $message .= "Something went wrong, error message is: " . $e->getMessage();
         }
 
