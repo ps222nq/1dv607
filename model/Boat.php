@@ -16,16 +16,11 @@ class Boat {
     public function __construct($type, $length)
     {
         //validate parameters
-        $this->validateype($type);
+        $this->validateType($type);
         $this->validateLength($length);
 
         $this->type = $type;
         $this->length = $length;
-    }
-
-
-    public function getLength(){
-        return $this->length;
     }
 
 
@@ -35,21 +30,15 @@ class Boat {
     }
 
 
-    public function setType($type) {
-        $this->validaType($type);
-        $this->type = $type;
-    }
-
-
     private function validateLength($length){
         if (!is_numeric($length)) {
-            throw new \Exception("Length must be of type string");
+            throw new \Exception("Length must be numeric");
         }
     }
 
 
-    public function getType(){
-        return $this->type;
+    public function getLength(){
+        return $this->length;
     }
 
 
@@ -59,7 +48,7 @@ class Boat {
     }
 
 
-    private function validateype($type){
+    private function validateType($type){
         if (!is_string($type)) {
             throw new \Exception("Type must be a string");
         }
@@ -68,10 +57,5 @@ class Boat {
 
     public function getType(){
         return $this->type;
-    }
-
-
-    public function getLength(){
-        return $this->length;
     }
 }
