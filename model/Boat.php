@@ -24,14 +24,15 @@ class Boat
         $this->length = $length;
     }
 
+
+    public function getLength(){
+        return $this->length;
+    }
+
+
     public function setLength($length){
         $this->validateLength();
         $this->length = $length;
-    }
-
-    public function setType($type) {
-        $this->validaType($type);
-        $this->type = $type;
     }
 
 
@@ -42,6 +43,17 @@ class Boat
     }
 
 
+    public function getType(){
+        return $this->type;
+    }
+
+
+    public function setType($type) {
+        $this->validaType($type);
+        $this->type = $type;
+    }
+
+
     private function validateype($type){
         if (!is_string($type)) {
             throw new \Exception("Type must be a string");
@@ -49,14 +61,8 @@ class Boat
     }
 
 
-    public function getType(){
-        return $this->type;
-    }
 
 
-    public function getLength(){
-        return $this->length;
-    }
 
 
 
