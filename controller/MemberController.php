@@ -38,5 +38,11 @@ class MemberController {
         //TODO: implement
     }
 
-    //TODO: add method for adding to assets
+    public function getMemberAssets($formData){
+        //todo: implement
+    }
+
+    public function updateMemberAssets($formData) {
+
+    }
 }
