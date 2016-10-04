@@ -14,7 +14,7 @@ class Member {
         $this->setId($cId);
     }
 
-    public function memberString(){
+    public function toString(){
 
         return "Name: " . $this->name . ", Personal Number: " . $this->personalNumber . ", ID: " . $this->id;
     }

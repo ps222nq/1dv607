@@ -13,11 +13,11 @@ class MemberController {
 
             $newMember  = new \model\Member($name, $personalNumber, $id);
 
-            $message .= "Created new Member " . $newMember.memberString();
+            $message .= "Created new Member: " . $newMember->toString();
 
         }
         catch (Exception $e) {
-            $message .= "Something went wrong, error message is: " . $e.message;
+            $message .= "Something went wrong, error message is: " . $e->getMessage();
         }
 
         return $message;
