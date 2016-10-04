@@ -16,6 +16,7 @@ public function __construct()
 private function shouldCreateMember() {
     $expected = "Glenn";
     $testMember = new Member("Glenn", "19000101-0101", 1);
-    assert($expected == $testMember->getName(), "Name should equal expected");
+    $testName = $testMember->getName();
+    assert($expected === $testName, "$testName returned, $expected was expected");
 }
 }

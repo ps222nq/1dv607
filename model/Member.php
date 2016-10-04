@@ -41,9 +41,9 @@ class Member {
         $yearOfBirth = 0;
         if(strlen($pnr) !== 13) {
             throw new \Exception("Please enter personal number in format YYYYMMDD-XXXX");
+        } else {
+            return TRUE;
         }
-
-
     }
 
     public function setPersonalNumber($argPnr) {

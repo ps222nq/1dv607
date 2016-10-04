@@ -10,6 +10,7 @@ namespace model;
 
 
 class Boat {
+    private $id;
     private $type;
     private $length;
 
@@ -23,6 +24,15 @@ class Boat {
         $this->length = $length;
     }
 
+
+    public function toString(){
+        return "Type: " . $this->type . ", Length: " . $this->length;
+    }
+
+
+    public function getId(){
+        return $this->id;
+    }
 
     public function setLength($length){
         $this->validateLength();
