@@ -12,6 +12,6 @@ require_once('./boatTest.php');
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
-
+new \test\BoatTest();
 
 ?>

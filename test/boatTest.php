@@ -5,24 +5,21 @@
  * Date: 2016-10-04
  * Time: 11:42
  */
+namespace test;
 
-require_once('../model/Boat.php');
+require_once('./boatTest.php');
 
-public function boatTest(){
+class BoatTest {
 
-    private $boatClass;
-
-    public function _{
-        $this->init();
+    public function __construct(){
+        $this->shouldCreateBoat();
     }
 
-    public function init(){
-        $this->boatClass = new model\Boat("Other", 123);
-    }
-
-    public function shouldCreateBoat(){
+    private function shouldStoreValuesInBoat(){
         $shouldType = "Other";
-        $boat = new model\Boat($shouldType, 123);
-        assert($this->boatClass['type'] !== "Other", "Type is $this->boatClass['type'] but should be $shouldType");
+        $shouldLength = 123;
+        $sut = new \model\Boat($shouldType, $shouldLength);
+        assert($sut->getType() === $shouldType, "Type is $this->boatClass['type'] but should be $shouldType");
     }
+
 }
