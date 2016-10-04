@@ -37,12 +37,11 @@ class Member {
     }
 
     function isValidPNR($pnr) {
-        if( 1 == 1
-            //TODO: validation code here
-        ){
-            return TRUE;
-        } else {
-            return FALSE;
+        $yearOf
+        if(strlen($pnr) !== 13) {
+            throw new \Exception("Please enter personal number in format YYYYMMDD-XXXX");
+        }
+
         }
     }
 

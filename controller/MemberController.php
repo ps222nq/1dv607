@@ -3,6 +3,7 @@
 namespace controller;
 
 require_once("../model/Member.php");
+require_once ("RegistryController.php");
 
 class MemberController {
 

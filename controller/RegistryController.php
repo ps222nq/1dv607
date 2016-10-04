@@ -11,17 +11,18 @@ class RegistryController {
     {
         $this->path = $path;
 
+    }
+
+    public function getData() {
         try {
             $dataString = file_get_contents("../registry.txt");
             $this->data = json_decode($dataString);
+            return $this->data;
         }
         catch (\Exception $e) {
             return $e->getMessage();
         }
-    }
 
-    public function getData() {
-        return $this->data;
     }
 
     public function writeData($arr) {
