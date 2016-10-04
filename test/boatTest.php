@@ -15,7 +15,7 @@ class BoatTest {
         $this->shouldCreateBoat();
     }
 
-    private function shouldStoreValuesInBoat(){
+    private function shouldCreateBoat(){
         $shouldType = "Other";
         $shouldLength = 123;
         $sut = new \model\Boat($shouldType, $shouldLength);
