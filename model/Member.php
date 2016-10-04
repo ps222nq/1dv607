@@ -14,7 +14,7 @@ class Member {
             $name = $argName;
             return "Name set to " . $argName;
         } else {
-            return "Name must be a string between 0 and 50 characters";
+            throw new \Exception("Name must be a string between 0 and 50 characters");
         }
     }
 
@@ -26,7 +26,7 @@ class Member {
         if(isValidPNR($argPnr) === TRUE){
             $personalNumber = $argPnr;
         } else {
-            return "Personal number not valid, please try again."
+            throw new \Exception("Personal number not valid, please try again.");
         }
     }
 
@@ -50,7 +50,7 @@ class Member {
             $id = $argId;
             return "User ID set to " . $argId;
         } else {
-            return "Could not set user ID. Please try again";
+            throw new \Exception("User ID not set, please try again");
         }
 
 
