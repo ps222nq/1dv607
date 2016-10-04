@@ -23,4 +23,16 @@ class MemberController {
         return $message;
     }
 
+    public function updateMember($formData) {
+        //TODO: implement
+    }
+
+    public function deleteMember($formData) {
+        //TODO: implement
+    }
+
+    public function getMemberInfo($formData) {
+        //TODO: implement
+    }
+
 }
