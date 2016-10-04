@@ -23,7 +23,21 @@ class Member {
     }
 
     public function setPersonalNumber($argPnr) {
-    //TODO: validation of PNR
+        if(isValidPNR($argPnr) === TRUE){
+            $personalNumber = $argPnr;
+        } else {
+            return "Personal number not valid, please try again."
+        }
+    }
+
+    private function isValidPNR($pnr) {
+        if(
+        //TODO: validation code here
+        ){
+            return TRUE;
+        } else {
+            return FALSE;
+        }
     }
 
     public function getId() {
@@ -32,9 +46,14 @@ class Member {
 
     public function setId($argId) {
         //TODO: more extensive validation
-        if(is_numeric($argId)){
+        if(is_numeric($argId) && argId > 0){
             $id = $argId;
+            return "User ID set to " . $argId;
+        } else {
+            return "Could not set user ID. Please try again";
         }
+
+
     }
 }
 ?>
