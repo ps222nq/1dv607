@@ -20,8 +20,9 @@ public function boatTest(){
         $this->boatClass = new model\Boat("Other", 123);
     }
 
-    public function tryConstructor(){
-        $boat = new model\Boat("Other", 123);
-        assert($this->boatClass['type'] === "Other", "Assert test");
+    public function shouldCreateBoat(){
+        $shouldType = "Other";
+        $boat = new model\Boat($shouldType, 123);
+        assert($this->boatClass['type'] !== "Other", "Type is $this->boatClass['type'] but should be $shouldType");
     }
 }
