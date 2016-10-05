@@ -31,18 +31,51 @@ class MemberController {
     }
 
     public function deleteMember($formData) {
-        //TODO: implement
+        $memberToDelete = $formData["id"];
+        $reg = new RegistryController("../registry.txt");
+        $arr = $reg->getData();
+
+        foreach ($arr as $a) {
+            if ($a["id"] === $memberToDelete) {
+                unset($a);
+            }
+        }
     }
 
     public function getMemberInfo($formData) {
-        //TODO: implement
+        $memberToGet = $formData["id"];
+        $reg = new RegistryController("../registry.txt");
+        $arr = $reg->getData();
+
+        foreach ($arr as $a) {
+            if($a["id"] === $memberToGet){
+                return $a;
+            }
+        }
     }
 
     public function getMemberAssets($formData){
-        //todo: implement
+        $memberToGet = $formData["id"];
+        $reg = new RegistryController("../registry.txt");
+        $arr = $reg->getData();
+
+        foreach ($arr as $a) {
+            if($a["id"] === $memberToGet){
+                return $a["assets"];
+            }
+        }
     }
 
     public function updateMemberAssets($formData) {
+        $memberToGet = $formData["id"];
+        $newAssets = $formData["assets"];
+        $reg = new RegistryController("../registry.txt");
+        $arr = $reg->getData();
 
+        foreach ($arr as $a) {
+            if($a["id"] === $memberToGet){
+                $a["assets"] = $newAssets;
+            }
+        }
     }
 }
