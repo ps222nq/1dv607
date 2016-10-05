@@ -23,7 +23,8 @@ class MemberViewTest
     private function shouldReturnHTMLString() {
         $member = new \model\Member("Test Testsson", "19002233-4455", 100);
         $view = new \view\MemberView($member);
-
-        //TODO: test renderMemberDetailsHTML function
+        $res = $view->renderMemberDetailsHTML($member);
+        $expected = '<ul><li>' . $member->getId(). ' ' .$member->getName() .' '. $member->getNumberOfAssets() . '</li></ul>';
+        assert($res === $expected, 'Rendered: ' . $res . '  BUT ' . $expected . '   was expected' );
     }
 }

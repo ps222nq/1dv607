@@ -28,7 +28,6 @@ class BoatViewTest {
         $expected = '<li>' . 'Type: ' . $boat->getType() . ', Length: ' . $boat->getLength() .
             '<a href="index.php?command=edit&id=' . $boat->getId() . '">Edit</a> <a href="index.php?command=delete&id=' . $boat->getId() . '">Delete</a> </li>';
         $res = $view->renderBoatDetailHTML($boat);
-        echo $res;
         assert($res === $expected, 'Rendered:' . $res . ' expected ' . $expected);
     }
 

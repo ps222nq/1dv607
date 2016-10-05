@@ -67,8 +67,6 @@ class Member {
         } else {
             throw new \Exception("User ID not set, please try again");
         }
-
-
     }
 }
 ?>
