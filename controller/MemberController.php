@@ -79,7 +79,7 @@ class MemberController {
         }
     }
 
-    private function executeMethodOnAsset($methodToExecute, $formData){
+    public function executeMethodOnAsset($methodToExecute, $formData){
         $memberToExecuteFunctionOn = $formData["id"];
         $reg = new RegistryController("../registry.txt");
         $arr = $reg->getData();
