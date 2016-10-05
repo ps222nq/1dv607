@@ -85,7 +85,7 @@ class MemberController {
         $arr = $reg->getData();
 
         foreach ($arr as $a) {
-            if ($a["id"] === $memberToDelete) {
+            if ($a["id"] === $memberToExecuteFunctionOn) {
                 $methodToExecute($a);
             }
         }
