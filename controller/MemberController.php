@@ -78,4 +78,16 @@ class MemberController {
             }
         }
     }
+
+    private function executeMethodOnAsset($methodToExecute, $formData){
+        $memberToExecuteFunctionOn = $formData["id"];
+        $reg = new RegistryController("../registry.txt");
+        $arr = $reg->getData();
+
+        foreach ($arr as $a) {
+            if ($a["id"] === $memberToDelete) {
+                $methodToExecute($a);
+            }
+        }
+    }
 }
