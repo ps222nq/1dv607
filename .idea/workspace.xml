@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="768390c8-4909-41bc-8e08-a814486f7508" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/MemberController.php" afterPath="$PROJECT_DIR$/controller/MemberController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/MemberView.php" afterPath="$PROJECT_DIR$/view/MemberView.php" />
     </list>
     <ignored path="1dv607.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -57,8 +57,8 @@
       <file leaf-file-name="MemberView.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/view/MemberView.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+            <state relative-caret-position="330">
+              <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -114,12 +114,12 @@
       <list>
         <option value="$PROJECT_DIR$/view/BoatView.php" />
         <option value="$PROJECT_DIR$/view/MenuView.php" />
-        <option value="$PROJECT_DIR$/view/MemberView.php" />
         <option value="$PROJECT_DIR$/controller/RegistryController.php" />
         <option value="$PROJECT_DIR$/model/Member.php" />
         <option value="$PROJECT_DIR$/test/test.php" />
         <option value="$PROJECT_DIR$/test/memberTest.php" />
         <option value="$PROJECT_DIR$/controller/MemberController.php" />
+        <option value="$PROJECT_DIR$/view/MemberView.php" />
       </list>
     </option>
   </component>
@@ -257,12 +257,12 @@
       <option name="presentableId" value="Default" />
       <updated>1475578617565</updated>
       <workItem from="1475578619510" duration="11083000" />
-      <workItem from="1475694144142" duration="337000" />
+      <workItem from="1475694144142" duration="1156000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11420000" />
+    <option name="totallyTimeSpent" value="12239000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1260" height="733" extended-state="0" />
@@ -434,8 +434,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/view/MemberView.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        <state relative-caret-position="330">
+          <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
           <folding />
         </state>
       </provider>
