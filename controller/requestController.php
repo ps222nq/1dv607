@@ -45,6 +45,8 @@ class requestController {
             $members = $this->memberController->getMembersList();
             $mv->renderVerboseList($members);
         };
+
+
     }
 
     public function handlePosts(){

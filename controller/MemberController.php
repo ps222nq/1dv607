@@ -62,14 +62,12 @@ class MemberController {
         //TODO: implement
     }
 
-    public function deleteMember($formData) {
-        $memberToDelete = $formData["id"];
-        $reg = new RegistryController("../registry.txt");
-        $arr = $reg->getData();
+    public function deleteMember($id) {
+        $memberToDelete = $id;
 
-        foreach ($arr as $a) {
-            if ($a["id"] === $memberToDelete) {
-                unset($a);
+        foreach ($this->membersList as $member) {
+            if ($member->getId() === $memberToDelete) {
+                unset($member);
             }
         }
     }
