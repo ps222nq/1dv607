@@ -12,6 +12,6 @@ class BoatView {
         $res .= "</tr>";
         }
 
-        echo $res;
+        return $res;
     }
 }

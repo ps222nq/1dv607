@@ -29,7 +29,7 @@ class BoatViewTest {
         $expected = "<tr class='boatRow'>";
         $expected .= "<td>" . $boat->getId() . "</td><td>" . $boat->getType(). "</td><td>" . $boat->getLength() . "</td>";
         $expected .= "</tr>";
-        $res = $view->renderBoats($boatsArray);
+        $res = $view->renderBoatList($boatsArray);
         assert($res === $expected, 'Rendered:' . $res . ' expected ' . $expected);
     }
 
