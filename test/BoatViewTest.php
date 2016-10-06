@@ -23,11 +23,13 @@ class BoatViewTest {
         $type = "Other";
         $length = 100;
         $boat = new \model\Boat($type, $length);
+        $boatsArray = array();
+        array_push($boatsArray, $boat);
         $view = new \view\BoatView();
-        //Inspired by http://www.killersites.com/community/index.php?/topic/1969-basic-php-system-vieweditdeleteadd-records/
-        $expected = '<li>' . 'Type: ' . $boat->getType() . ', Length: ' . $boat->getLength() .
-            '<a href="index.php?command=edit&id=' . $boat->getId() . '">Edit</a> <a href="index.php?command=delete&id=' . $boat->getId() . '">Delete</a> </li>';
-        $res = $view->renderBoatDetailHTML($boat);
+        $expected = "<tr class='boatRow'>";
+        $expected .= "<td>" . $boat->getId() . "</td><td>" . $boat->getType(). "</td><td>" . $boat->getLength() . "</td>";
+        $expected .= "</tr>";
+        $res = $view->renderBoats($boatsArray);
         assert($res === $expected, 'Rendered:' . $res . ' expected ' . $expected);
     }
 

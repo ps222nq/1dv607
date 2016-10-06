@@ -2,12 +2,13 @@
 
 //TODO: Include views
 
-
+require_once('./view/MenuView.php');
 //Error reporting ON
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
-echo "Test";
+
+new \view\MenuView();
 
 //TODO: Instantiate view objects
 

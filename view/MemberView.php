@@ -2,19 +2,17 @@
 
 namespace view;
 
-require_once("../controller/MemberController.php");
+require_once('BoatView.php');
+
 
 class MemberView {
-    public function renderMemberDetailsHTML(\model\Member $member){
-        return '<ul><li>' . $member->getId(). ' ' .$member->getName() .' '. $member->getNumberOfAssets() . '</li></ul>';
-    }
 
     public function renderCompactList($data) {
         $res = "<table>";
 
         foreach($data as $d){
-            $res .= "<tr>";
-            $res .= "<td>" . $d["name"]. "</td><td>" . $d["assets"] . "</td>";
+            $res .= "<tr class='memberRow'>";
+            $res .= "<td>" . $d["name"]. "</td><td>" . $d["id"] . "</td><td>" . count($d["assets"]) . "</td>";
             $res .= "</tr>";
         }
 
@@ -23,4 +21,21 @@ class MemberView {
         return $res;
     }
 
+
+    public function renderVerboseList($data) {
+        $boatView = new BoatView();
+
+        $res = "<table>";
+
+        foreach($data as $d){
+            $res .= "<tr class='memberRow'>";
+            $res .= "<td>" . $d["name"]. "</td><td>" . $d["personalNumber"] . "</td><td>" . $d["id"] . "</td>";
+            $res .= "</tr>";
+            $res .= $boatView->renderBoatList($d["assets"]);
+        }
+
+        $res .= "</table>";
+
+        return $res;
+    }
 }
