@@ -18,7 +18,7 @@ private function shouldCreateMember() {
     $testMember = new Member("Glenn", "19000101-0101", 1);
     $testName = $testMember->getName();
     if($testName === $expected){
-        echo "shouldCreateMember working";
+        echo "<li>shouldCreateMember working</li>";
     }
     assert($expected === $testName, "$testName returned, $expected was expected");
 }

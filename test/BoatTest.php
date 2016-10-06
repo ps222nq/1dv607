@@ -24,7 +24,7 @@ class BoatTest {
         $shouldLength = 123;
         $sut = new \model\Boat($shouldType, $shouldLength);
         if($sut->getType() === $shouldType){
-            echo "Boat created with correct type";
+            echo "<li>Boat created with correct type</li>";
         }
         assert($sut->getType() === $shouldType, "Type is but should be $shouldType");
     }
@@ -38,7 +38,7 @@ class BoatTest {
 
         } catch(\Exception $exception) {
             if($exception->getMessage() === $expected){
-                echo "shouldThrowExceptionInvalidFormatParam1 working";
+                echo "<li>shouldThrowExceptionInvalidFormatParam1 working</li>";
             }
             assert($exception->getMessage() === $expected, 'Respons' . $exception . ':    ' . $expected . '  was expected');
         }
@@ -52,7 +52,7 @@ class BoatTest {
             new \model\Boat($shouldType, $shouldLength);
         } catch(\Exception $exception) {
             if($exception->getMessage() === $expected){
-                echo "shouldThrowExceptionInvalidFormatParam1 working";
+                echo "<li>shouldThrowExceptionInvalidFormatParam1 working</li>";
             }
             assert($exception->getMessage() === $expected, 'Respons' . $exception . ':    ' . $expected . '  was expected');
         }
@@ -63,7 +63,7 @@ class BoatTest {
         $sut = new \model\Boat("Type", $expected);
         $returns = $sut->getLength();
         if($returns === $expected){
-            echo "shouldReturnLength working";
+            echo "<li>shouldReturnLength working</li>";
         }
         assert($returns === $expected, "$returns is returned, $expected was expected");
     }
@@ -73,7 +73,7 @@ class BoatTest {
         $sut = new \model\Boat($expected, 10);
         $returns = $sut->getType();
         if($returns === $expected){
-            echo "shouldReturnType working";
+            echo "<li>shouldReturnType working</li>";
         }
         assert($returns === $expected, "$returns is returned, $expected was expected");
     }

@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="768390c8-4909-41bc-8e08-a814486f7508" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/requestController.php" afterPath="$PROJECT_DIR$/controller/requestController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/BoatTest.php" afterPath="$PROJECT_DIR$/test/BoatTest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/BoatViewTest.php" afterPath="$PROJECT_DIR$/test/BoatViewTest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/MemberViewTest.php" afterPath="$PROJECT_DIR$/test/MemberViewTest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/memberTest.php" afterPath="$PROJECT_DIR$/test/memberTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/BoatView.php" afterPath="$PROJECT_DIR$/view/BoatView.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/MemberView.php" afterPath="$PROJECT_DIR$/view/MemberView.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test.php" afterPath="$PROJECT_DIR$/test/test.php" />
     </list>
     <ignored path="1dv607.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -69,11 +68,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="memberTest.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="memberTest.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/memberTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+            <state relative-caret-position="255">
+              <caret line="17" column="58" selection-start-line="17" selection-start-column="58" selection-end-line="17" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BoatViewTest.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/BoatViewTest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="389">
+              <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/test.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -82,8 +101,8 @@
       <file leaf-file-name="BoatTest.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/BoatTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="930">
-              <caret line="71" column="31" selection-start-line="71" selection-start-column="31" selection-end-line="71" selection-end-column="31" />
+            <state relative-caret-position="885">
+              <caret line="72" column="46" selection-start-line="72" selection-start-column="46" selection-end-line="72" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -102,8 +121,8 @@
       <file leaf-file-name="MemberViewTest.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/MemberViewTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+            <state relative-caret-position="284">
+              <caret line="29" column="68" selection-start-line="29" selection-start-column="68" selection-end-line="29" selection-end-column="68" />
               <folding />
             </state>
           </provider>
@@ -120,15 +139,15 @@
         <option value="$PROJECT_DIR$/view/MenuView.php" />
         <option value="$PROJECT_DIR$/controller/RegistryController.php" />
         <option value="$PROJECT_DIR$/model/Member.php" />
-        <option value="$PROJECT_DIR$/test/test.php" />
         <option value="$PROJECT_DIR$/controller/MemberController.php" />
         <option value="$PROJECT_DIR$/controller/requestController.php" />
-        <option value="$PROJECT_DIR$/test/BoatViewTest.php" />
         <option value="$PROJECT_DIR$/view/MemberView.php" />
         <option value="$PROJECT_DIR$/view/BoatView.php" />
-        <option value="$PROJECT_DIR$/test/MemberViewTest.php" />
-        <option value="$PROJECT_DIR$/test/BoatTest.php" />
         <option value="$PROJECT_DIR$/test/memberTest.php" />
+        <option value="$PROJECT_DIR$/test/BoatTest.php" />
+        <option value="$PROJECT_DIR$/test/MemberViewTest.php" />
+        <option value="$PROJECT_DIR$/test/BoatViewTest.php" />
+        <option value="$PROJECT_DIR$/test/test.php" />
       </list>
     </option>
   </component>
@@ -266,12 +285,12 @@
       <option name="presentableId" value="Default" />
       <updated>1475578617565</updated>
       <workItem from="1475578619510" duration="11083000" />
-      <workItem from="1475694144142" duration="4409000" />
+      <workItem from="1475694144142" duration="4669000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15492000" />
+    <option name="totallyTimeSpent" value="15752000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1260" height="733" extended-state="0" />
@@ -369,14 +388,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/Controller.php" />
-    <entry file="file://$PROJECT_DIR$/test/test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="17" column="2" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/Boat.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -441,14 +452,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/BoatViewTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/MemberView.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
@@ -465,26 +468,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/MemberViewTest.php">
+    <entry file="file://$PROJECT_DIR$/test/BoatTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+        <state relative-caret-position="885">
+          <caret line="72" column="46" selection-start-line="72" selection-start-column="46" selection-end-line="72" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/BoatTest.php">
+    <entry file="file://$PROJECT_DIR$/test/MemberViewTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="930">
-          <caret line="71" column="31" selection-start-line="71" selection-start-column="31" selection-end-line="71" selection-end-column="31" />
+        <state relative-caret-position="284">
+          <caret line="29" column="68" selection-start-line="29" selection-start-column="68" selection-end-line="29" selection-end-column="68" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/memberTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+        <state relative-caret-position="255">
+          <caret line="17" column="58" selection-start-line="17" selection-start-column="58" selection-end-line="17" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/BoatViewTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
           <folding />
         </state>
       </provider>

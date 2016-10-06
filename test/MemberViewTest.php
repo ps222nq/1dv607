@@ -27,7 +27,7 @@ class MemberViewTest
         $expected = '<ul><li>' . $member->getId(). ' ' .$member->getName() .' '. $member->getAssetCount() . '</li></ul>';
 
         if($res === $expected) {
-            echo "MemberView shouldReturnHTMLString working";
+            echo "<li>MemberView shouldReturnHTMLString working</li>";
         }
 
         assert($res === $expected, 'Rendered: ' . $res . '  BUT ' . $expected . '   was expected' );
