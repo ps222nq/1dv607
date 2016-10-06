@@ -18,7 +18,7 @@ class MemberView {
 
         $res .= "</table>";
 
-        return $res;
+        echo $res;
     }
 
 
@@ -36,6 +36,6 @@ class MemberView {
 
         $res .= "</table>";
 
-        return $res;
+        echo $res;
     }
 }

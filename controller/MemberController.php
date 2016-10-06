@@ -2,16 +2,24 @@
 
 namespace controller;
 
-require_once("../model/Member.php");
+require_once("././model/Member.php");
 require_once ("RegistryController.php");
 
 class MemberController {
+
+    private $membersList;
+    private $register;
+
+        public function __construct(){
+        $this->register = new \controller\RegistryController();
+        $this->membersList = $this->register->getData();
+    }
 
     public function addMember($formData) {
         $message = "";
         try {
             $name = $formData["name"];
-            $personalNumber = $formData["pnr"];
+            $personalNumber = $formData["personalnumber"];
             $id = 1; //TODO: create connection that reads length of JSON obj to determine ID instead
 
             $newMember  = new \model\Member($name, $personalNumber, $id);
