@@ -68,5 +68,13 @@ class Member {
             throw new \Exception("User ID not set, please try again");
         }
     }
+
+    public function getAssetCount(){
+        return count($this->assets);
+    }
+
+    public function getAssets(){
+        return $this->assets;
+    }
 }
 ?>

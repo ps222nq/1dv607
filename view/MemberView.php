@@ -10,9 +10,9 @@ class MemberView {
     public function renderCompactList($data) {
         $res = "<table>";
 
-        foreach($data as $d){
+        foreach($data as $member){
             $res .= "<tr class='memberRow'>";
-            $res .= "<td>" . $d["name"]. "</td><td>" . $d["id"] . "</td><td>" . count($d["assets"]) . "</td>";
+            $res .= "<td>" . $member->getName(). "</td><td>" . $member->getId() . "</td><td>" . $member->getAssetCount() . "</td>";
             $res .= "</tr>";
         }
 
@@ -27,11 +27,11 @@ class MemberView {
 
         $res = "<table>";
 
-        foreach($data as $d){
+        foreach($data as $member){
             $res .= "<tr class='memberRow'>";
-            $res .= "<td>" . $d["name"]. "</td><td>" . $d["personalNumber"] . "</td><td>" . $d["id"] . "</td>";
+            $res .= "<td>" . $member->getName() . "</td><td>" . $member->getPersonalNumber() . "</td><td>" . $member->getId() . "</td>";
             $res .= "</tr>";
-            $res .= $boatView->renderBoatList($d["assets"]);
+            $res .= $boatView->renderBoatList($member->getAssets());
         }
 
         $res .= "</table>";

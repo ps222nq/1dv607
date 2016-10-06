@@ -23,11 +23,12 @@ class RegistryController {
         }
     }
 
-
+    //Read more about serialize/unserialize and json_decode/encode before changing to alternative method. http://stackoverflow.com/questions/804045/preferred-method-to-store-php-arrays-json-encode-vs-serialize
     public function getData() {
         try {
             $dataString = file_get_contents(self::$path);
-            $this->data = json_decode($dataString);
+            $unserializedData = unserialize($dataString);
+            $this->data = $unserializedData;
             return $this->data;
         }
         catch (\Exception $e) {
@@ -37,8 +38,8 @@ class RegistryController {
 
 
     public function writeData($arr) {
-        $arrToJson = json_encode($arr);
-        file_put_contents(self::$path, $arrToJson);
+        $serializedData = serialize($arr);
+        file_put_contents(self::$path, $serializedData);
     }
 
 }

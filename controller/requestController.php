@@ -10,6 +10,7 @@
 namespace controller;
 
 require_once('./view/AddMemberView.php');
+require_once('./view/MemberView.php');
 require_once('MemberController.php');
 
 class requestController {
@@ -34,18 +35,25 @@ class requestController {
         };
 
         if($_SERVER['QUERY_STRING'] === 'list'){
-            $this->renderCompactList();
+            $mv = new \view\MemberView();
+            $members = $this->memberController->getMembersList();
+            $mv->renderCompactList($members);
         };
 
         if($_SERVER['QUERY_STRING'] === 'detailedList'){
-            $compactList = new \view\MemberView();
-            $compactList->renderVerboseList();
+            $mv = new \view\MemberView();
+            $members = $this->memberController->getMembersList();
+            $mv->renderVerboseList($members);
         };
     }
 
     public function handlePosts(){
-        if(isset($_POST['addMemberForm'])) {
-            $this->memberController->addMember($_POST);
+        try {
+            if(isset($_POST['addMemberForm'])) {
+                echo $this->memberController->addMember($_POST);
+            }
+        } catch (\Exception $exception){
+            echo $exception->getMessage();
         }
     }
 }
