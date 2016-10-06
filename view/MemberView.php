@@ -19,7 +19,7 @@ class MemberView {
 
         $res .= "</table>";
 
-        echo $res;
+        return $res;
     }
 
 
@@ -38,7 +38,7 @@ class MemberView {
 
         $res .= "</table>";
 
-        echo $res;
+        return $res;
     }
 
     public function addLinks($member) {
