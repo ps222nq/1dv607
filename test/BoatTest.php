@@ -23,6 +23,9 @@ class BoatTest {
         $shouldType = "Other";
         $shouldLength = 123;
         $sut = new \model\Boat($shouldType, $shouldLength);
+        if($sut->getType() === $shouldType){
+            echo "<li>Boat created with correct type</li>";
+        }
         assert($sut->getType() === $shouldType, "Type is but should be $shouldType");
     }
 
@@ -32,7 +35,11 @@ class BoatTest {
         $expected = 'Type must be a string';
         try{
             new \model\Boat($shouldType, $shouldLength);
+
         } catch(\Exception $exception) {
+            if($exception->getMessage() === $expected){
+                echo "<li>shouldThrowExceptionInvalidFormatParam1 working</li>";
+            }
             assert($exception->getMessage() === $expected, 'Respons' . $exception . ':    ' . $expected . '  was expected');
         }
     }
@@ -44,6 +51,9 @@ class BoatTest {
         try{
             new \model\Boat($shouldType, $shouldLength);
         } catch(\Exception $exception) {
+            if($exception->getMessage() === $expected){
+                echo "<li>shouldThrowExceptionInvalidFormatParam1 working</li>";
+            }
             assert($exception->getMessage() === $expected, 'Respons' . $exception . ':    ' . $expected . '  was expected');
         }
     }
@@ -52,6 +62,9 @@ class BoatTest {
         $expected = 10;
         $sut = new \model\Boat("Type", $expected);
         $returns = $sut->getLength();
+        if($returns === $expected){
+            echo "<li>shouldReturnLength working</li>";
+        }
         assert($returns === $expected, "$returns is returned, $expected was expected");
     }
 
@@ -59,6 +72,9 @@ class BoatTest {
         $expected = "BoatType";
         $sut = new \model\Boat($expected, 10);
         $returns = $sut->getType();
+        if($returns === $expected){
+            echo "<li>shouldReturnType working</li>";
+        }
         assert($returns === $expected, "$returns is returned, $expected was expected");
     }
 

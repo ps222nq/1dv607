@@ -35,7 +35,7 @@ class MemberController {
         return $this->membersList;
     }
 
-
+    //TODO: figure out why this is not adding a new member
     public function addMember($formData) {
         $message = "";
         try {
