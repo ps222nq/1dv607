@@ -24,7 +24,12 @@ class MemberViewTest
         $member = new \model\Member("Test Testsson", "19002233-4455", 100);
         $view = new \view\MemberView($member);
         $res = $view->renderMemberDetailsHTML($member);
-        $expected = '<ul><li>' . $member->getId(). ' ' .$member->getName() .' '. $member->getNumberOfAssets() . '</li></ul>';
+        $expected = '<ul><li>' . $member->getId(). ' ' .$member->getName() .' '. $member->getAssetCount() . '</li></ul>';
+
+        if($res === $expected) {
+            echo "MemberView shouldReturnHTMLString working";
+        }
+
         assert($res === $expected, 'Rendered: ' . $res . '  BUT ' . $expected . '   was expected' );
     }
 }

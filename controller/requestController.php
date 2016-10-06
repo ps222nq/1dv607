@@ -50,10 +50,10 @@ class requestController {
     public function handlePosts(){
         try {
             if(isset($_POST['addMemberForm'])) {
-                echo $this->memberController->addMember($_POST);
+                return $this->memberController->addMember($_POST);
             }
         } catch (\Exception $exception){
-            echo $exception->getMessage();
+            return $exception->getMessage();
         }
     }
 }

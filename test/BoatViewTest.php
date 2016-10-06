@@ -30,7 +30,11 @@ class BoatViewTest {
         $expected .= "<td>" . $boat->getId() . "</td><td>" . $boat->getType(). "</td><td>" . $boat->getLength() . "</td>";
         $expected .= "</tr>";
         $res = $view->renderBoatList($boatsArray);
+        if($res === $expected){
+            echo "shouldREturnHTMLString working!";
+        }
         assert($res === $expected, 'Rendered:' . $res . ' expected ' . $expected);
+
     }
 
 
