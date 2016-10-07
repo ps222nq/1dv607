@@ -25,4 +25,6 @@ class AddMemberView
         echo $res;
     }
 
+    //TODO: Add new updatememberform, set name on submit to uppDateMemberForm, should take Member object as input and populate inputfields with values from object.
+
 }

@@ -54,6 +54,10 @@ class requestController {
             if(isset($_POST['addMemberForm'])) {
                 return $this->memberController->addMember($_POST);
             }
+            // TODO: Check if working
+            if(isset($_POST['uppdateMemberForm'])){
+                return $this->memberController->updateMember($_POST);
+            }
         } catch (\Exception $exception){
             return $exception->getMessage();
         }
