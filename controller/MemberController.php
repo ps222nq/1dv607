@@ -44,11 +44,14 @@ class MemberController {
             $id = $this->maxID + 1;
             $newMember  = new \model\Member($name, $personalNumber, $id);
 
-            array_push($this->membersList, $newMember);
+            if(!$this->isDuplicate($newMember)){
+                array_push($this->membersList, $newMember);
+                $message .= "Created new Member: " . $newMember->toString();
+                $this->register->writeData($this->membersList);
+            } else {
+                $message .= "Member already exists: " . $newMember->toString();
+            }
 
-            $message .= "Created new Member: " . $newMember->toString();
-
-            $this->register->writeData($this->membersList);
         }
         catch (\Exception $e) {
             $message .= "Something went wrong, error message is: " . $e->getMessage();
@@ -56,6 +59,15 @@ class MemberController {
 
         return $message;
 
+    }
+
+    public function isDuplicate($member){
+        foreach($this->membersList as $memberFromList){
+            if($member->getPersonalNumber() === $memberFromList->getPersonalNumber()){
+                return TRUE;
+            }
+        }
+        return FALSE;
     }
 
     public function updateMember($formData) {
