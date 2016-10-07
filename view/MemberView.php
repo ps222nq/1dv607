@@ -44,7 +44,7 @@ class MemberView {
 
     public function addLinks($member) {
         $res = "<td><a href='?command=delete&id=" . $member->getId() . "'> Delete </td>";
-        $res .= "<td><a href='?command=edit&id=" . $member->getId() . "'> Edit </td>";
+        $res .= "<td><a href='?update'> Edit </td>";
         $res .= "<td><a href='?command=addasset&id=" . $member->getId() . "'> Add asset </td>";
 
         return $res;
