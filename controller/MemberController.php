@@ -71,7 +71,8 @@ class MemberController {
     }
 
     public function updateMember($formData) {
-        //TODO: implement
+        echo "working call";
+        return "hej";
     }
 
     public function deleteMember($id) {

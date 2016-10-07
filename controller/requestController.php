@@ -46,6 +46,12 @@ class requestController {
             $mv->renderVerboseList($members);
         };
 
+        if($_SERVER['QUERY_STRING'] === 'update'){
+            $av = new \view\AddMemberView();
+            $members = $this->memberController->getMembersList();
+            $av->renderUpdateForm($members["0"]);
+        };
+
 
     }
 
@@ -55,8 +61,14 @@ class requestController {
                 return $this->memberController->addMember($_POST);
             }
             // TODO: Check if working
-            if(isset($_POST['updateMemberForm'])){
-                return $this->memberController->updateMember($_POST);
+            if(isset($_GET['update'])){
+                try{
+                    echo "reading edit command";
+                    echo $this->memberController->updateMember($_GET['id']);
+                } catch (\Exception $e) {
+                    echo "Error: " . $e->getMessage();
+                }
+
             }
         } catch (\Exception $exception){
             return $exception->getMessage();
