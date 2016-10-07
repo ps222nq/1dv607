@@ -11,6 +11,7 @@ namespace controller;
 
 require_once('./view/AddMemberView.php');
 require_once('./view/MemberView.php');
+require_once('./view/UpdateMemberView.php');
 require_once('MemberController.php');
 
 class requestController {
@@ -47,9 +48,8 @@ class requestController {
         };
 
         if($_SERVER['QUERY_STRING'] === 'update'){
-            $av = new \view\AddMemberView();
             $members = $this->memberController->getMembersList();
-            $av->renderUpdateForm($members["0"]);
+            $uv = new \view\UpdateMemberView($members["0"]);
         };
 
 
@@ -61,10 +61,10 @@ class requestController {
                 return $this->memberController->addMember($_POST);
             }
             // TODO: Check if working
-            if(isset($_GET['update'])){
+            if(isset($_POST['updateMemberForm'])){
                 try{
                     echo "reading edit command";
-                    echo $this->memberController->updateMember($_GET['id']);
+                    echo $this->memberController->updateMember($_POST['id']);
                 } catch (\Exception $e) {
                     echo "Error: " . $e->getMessage();
                 }

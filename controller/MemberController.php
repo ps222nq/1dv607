@@ -71,8 +71,23 @@ class MemberController {
     }
 
     public function updateMember($formData) {
-        echo "working call";
-        return "hej";
+        try{
+            echo "working call";
+            $id = $formData["id"];
+            $name = $formData["name"];
+            $personalNumber = $formData["personalNumber"];
+
+            foreach ($this->membersList as $member) {
+                if($id === $member->getId()){
+                    $member->setPersonalNumber($personalNumber);
+                    $member->setName($name);
+                }
+            }
+            $this->register->writeData($this->membersList);
+        } catch (\Exception $e) {
+            echo $e->getMessage();
+        }
+
     }
 
     public function deleteMember($id) {

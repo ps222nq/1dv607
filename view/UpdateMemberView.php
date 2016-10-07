@@ -2,7 +2,7 @@
 
 namespace view;
 
-class AddMemberView {
+class UpdateMemberView {
 
     public function __construct($member){
         $this->renderUpdateForm($member);
@@ -14,7 +14,7 @@ class AddMemberView {
         $res =  "<form action='index.php'  method='post'>";
         $res .= "<input type='hidden' name='id' value='" . $member->getId() . "'><br>";
         $res .= "Name <input type='text' name='name' value ='". $member->getName() . "'><br>";
-        $res .= "Personal number <input type='text' name='personalnumber' value='" . $member->getPersonalNumber() . "'><br>";
+        $res .= "Personal number <input type='text' name='personalNumber' value='" . $member->getPersonalNumber() . "'><br>";
         $res .= "<input type='submit' value='update member' name='updateMemberForm'>";
         $res .= "</form>";
 
