@@ -36,8 +36,6 @@ class requestController {
         $structuredURI = array();
 
         //http://stackoverflow.com/questions/3833876/create-associative-array-from-foreach-loop-php
-
-        //split string at &
         $uriParts = explode("&", $_SERVER['QUERY_STRING']);
         foreach ($uriParts as $part) {
             $separeatedParts = explode('=',$part);
