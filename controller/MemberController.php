@@ -51,7 +51,7 @@ class MemberController {
             $this->register->writeData($this->membersList);
         }
         catch (\Exception $e) {
-            $message .= "Something went wrong, error message is: " . $e->getMessage();
+           echo $message .= "Something went wrong, error message is: " . $e->getMessage();
         }
 
         return $message;
