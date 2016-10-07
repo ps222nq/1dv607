@@ -11,7 +11,6 @@ class MemberView {
         $res = "<table>";
 
         foreach($data as $member){
-            var_dump($data);
             $res .= "<tr class='memberRow'>";
             $res .= "<td>" . $member->getName(). "</td><td>" . $member->getId() . "</td><td>" . $member->getAssetCount() . "</td>";
             $res .= $this->addLinks($member);

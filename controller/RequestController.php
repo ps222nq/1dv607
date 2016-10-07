@@ -36,7 +36,6 @@ class requestController {
             $structuredURI = array();
             //http://stackoverflow.com/questions/3833876/create-associative-array-from-foreach-loop-php
             $uriParts = explode("&", $_SERVER['QUERY_STRING']);
-
         }
 
         if(count($uriParts) > 0 && strlen($_SERVER['QUERY_STRING']) > 0){
@@ -48,7 +47,6 @@ class requestController {
             if(isset($structuredURI['command'])){
                 if($structuredURI['command'] === "update"){
                     $member = $this->memberController->getMember($structuredURI['id']);
-                    var_dump($member);
                     new UpdateMemberView($member);
                 }
 
@@ -75,7 +73,7 @@ class requestController {
             if(isset($_POST['addMemberForm'])) {
                 return $this->memberController->addMember($_POST);
             }
-            // TODO: Check if working
+
             if(isset($_POST['updateMemberForm'])){
                 return $this->memberController->updateMember($_POST);
             }
