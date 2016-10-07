@@ -3,4 +3,6 @@
 
 ### Please send email to sg222pn@student.lnu.se for link to live demo
 
-### Workshop resources: http://coursepress.lnu.se/kurs/objektorienterad-analys-och-design-med-uml/workshops-2/workshop-2-design/
+### [Link to diagrams](https://drive.google.com/file/d/0B4Dl3vAlGIepN25NSlJTT0V3QUU/view?usp=sharing)
+
+### [Workshop resources](http://coursepress.lnu.se/kurs/objektorienterad-analys-och-design-med-uml/workshops-2/workshop-2-design/)
