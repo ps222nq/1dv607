@@ -102,14 +102,10 @@ class MemberController {
         }
     }
 
-    public function getMemberInfo($id) {
-        $memberToGet = $id;
-        $reg = new RegistryController("../registry.txt");
-        $arr = $reg->getData();
-
-        foreach ($arr as $a) {
-            if($id === $memberToGet){
-                return $a;
+    public function getMember($id) {
+        foreach ($this->membersList as $member) {
+            if($member->getId() == $id){
+                return $member;
             }
         }
     }

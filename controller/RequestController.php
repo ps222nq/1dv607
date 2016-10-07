@@ -13,7 +13,11 @@ require_once('./view/MemberView.php');
 require_once('MemberController.php');
 require_once('view/UpdateMemberView.php');
 class requestController {
+
+
     private $memberController;
+
+
     public function __construct()
     {
         $this->memberController = new MemberController();
@@ -22,6 +26,8 @@ class requestController {
             $this->handlePosts();
         }
     }
+
+
     public function handleURI(){
         //array to keep associations from URI & splits each part of uri. Second split in each part at =
         //left part is the association name and right part the value. For example command=update&id=10 is
@@ -33,7 +39,7 @@ class requestController {
 
         }
 
-        if(count($uriParts) > 0 && isset($_SERVER['QUERY_STRING'])){
+        if(count($uriParts) > 0 && strlen($_SERVER['QUERY_STRING']) > 0){
             foreach ($uriParts as $part) {
                 $separeatedParts = explode('=',$part);
                 $structuredURI[$separeatedParts[0]] = $separeatedParts[1];
@@ -41,7 +47,8 @@ class requestController {
 
             if(isset($structuredURI['command'])){
                 if($structuredURI['command'] === "update"){
-                    $member = $this->memberController->getMemberInfo($structuredURI['id']);
+                    $member = $this->memberController->getMember($structuredURI['id']);
+                    var_dump($member);
                     new UpdateMemberView($member);
                 }
 
