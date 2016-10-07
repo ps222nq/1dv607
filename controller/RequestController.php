@@ -30,6 +30,23 @@ class requestController {
 
     public function handleURI(){
 
+        //array to keep associations from URI & splits each part of uri. Second split in each part at =
+        //left part is the association name and right part the value. For example command=update&id=10 is
+        // separated into a array array('command'=>'update','id'=>'10');
+        $structuredURI = array();
+
+        //http://stackoverflow.com/questions/3833876/create-associative-array-from-foreach-loop-php
+
+        //split string at &
+        $uriParts = explode("&", $_SERVER['QUERY_STRING']);
+        foreach ($uriParts as $part) {
+            $separeatedParts = explode('=',$part);
+            $structuredURI[$separeatedParts[0]] = $separeatedParts[1];
+        }
+
+
+
+
         if($_SERVER['QUERY_STRING'] === 'addMember'){
             new \view\AddMemberView();
         };
