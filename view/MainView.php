@@ -18,8 +18,8 @@ class MainView {
     }
 
     public function renderMenu(){
-    echo "<a href='?list'>List all members </a><br>";
-    echo "<a href='?detailedList'>List all members (Detailed)</a><br>";
-    echo "<a href='?addMember'>New member</a><br>";
+    echo "<a href='?command=list'>List all members </a><br>";
+    echo "<a href='?command=detailedList'>List all members (Detailed)</a><br>";
+    echo "<a href='?command=addMember'>New member</a><br>";
     }
 }
