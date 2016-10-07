@@ -73,9 +73,10 @@ class MemberController {
     public function updateMember($formData) {
         try{
             echo "working call";
-            $id = $formData["id"];
-            $name = $formData["name"];
-            $personalNumber = $formData["personalNumber"];
+            var_dump($formData);
+            $id = $formData['id'];
+            $name = $formData['name'];
+            $personalNumber = $formData['personalNumber'];
 
             foreach ($this->membersList as $member) {
                 if($id === $member->getId()){
@@ -84,6 +85,7 @@ class MemberController {
                 }
             }
             $this->register->writeData($this->membersList);
+
         } catch (\Exception $e) {
             echo $e->getMessage();
         }

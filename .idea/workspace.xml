@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="768390c8-4909-41bc-8e08-a814486f7508" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/MemberController.php" afterPath="$PROJECT_DIR$/controller/MemberController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/requestController.php" afterPath="$PROJECT_DIR$/controller/requestController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/UpdateMemberView.php" afterPath="$PROJECT_DIR$/view/UpdateMemberView.php" />
     </list>
     <ignored path="1dv607.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,8 +49,18 @@
       <file leaf-file-name="MemberController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controller/MemberController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="84" column="13" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
+            <state relative-caret-position="156">
+              <caret line="76" column="34" selection-start-line="76" selection-start-column="34" selection-end-line="76" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="requestController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/requestController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="71" column="13" selection-start-line="71" selection-start-column="13" selection-end-line="71" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -110,8 +118,8 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/view/MemberView.php" />
         <option value="$PROJECT_DIR$/view/AddMemberView.php" />
-        <option value="$PROJECT_DIR$/controller/requestController.php" />
         <option value="$PROJECT_DIR$/view/UpdateMemberView.php" />
+        <option value="$PROJECT_DIR$/controller/requestController.php" />
         <option value="$PROJECT_DIR$/controller/MemberController.php" />
       </list>
     </option>
@@ -294,12 +302,12 @@
       <option name="presentableId" value="Default" />
       <updated>1475578617565</updated>
       <workItem from="1475578619510" duration="11083000" />
-      <workItem from="1475694144142" duration="14984000" />
+      <workItem from="1475694144142" duration="15296000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26067000" />
+    <option name="totallyTimeSpent" value="26379000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-10" y="23" width="1260" height="733" extended-state="0" />
@@ -513,22 +521,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/requestController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/UpdateMemberView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/MainView.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -547,10 +539,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/view/UpdateMemberView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/requestController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="71" column="13" selection-start-line="71" selection-start-column="13" selection-end-line="71" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/controller/MemberController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="84" column="13" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
+        <state relative-caret-position="156">
+          <caret line="76" column="34" selection-start-line="76" selection-start-column="34" selection-end-line="76" selection-end-column="34" />
           <folding />
         </state>
       </provider>

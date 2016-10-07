@@ -64,7 +64,7 @@ class requestController {
             if(isset($_POST['updateMemberForm'])){
                 try{
                     echo "reading edit command";
-                    echo $this->memberController->updateMember($_POST['id']);
+                    echo $this->memberController->updateMember($_POST);
                 } catch (\Exception $e) {
                     echo "Error: " . $e->getMessage();
                 }
