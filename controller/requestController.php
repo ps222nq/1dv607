@@ -55,7 +55,7 @@ class requestController {
                 return $this->memberController->addMember($_POST);
             }
             // TODO: Check if working
-            if(isset($_POST['uppdateMemberForm'])){
+            if(isset($_POST['updateMemberForm'])){
                 return $this->memberController->updateMember($_POST);
             }
         } catch (\Exception $exception){
