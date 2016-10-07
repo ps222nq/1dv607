@@ -7,5 +7,6 @@
 ### Please send email to sg222pm@student.lnu.se for link to live demo
 
 ### [Link to diagrams](https://drive.google.com/file/d/0B4Dl3vAlGIepN25NSlJTT0V3QUU/view?usp=sharing)
-
+Note: you must be logged in with your LNU email address to view in Draw.io, otherwise preview resolution is very low
+ 
 ### [Workshop resources](http://coursepress.lnu.se/kurs/objektorienterad-analys-och-design-med-uml/workshops-2/workshop-2-design/)
