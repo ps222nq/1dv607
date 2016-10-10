@@ -50,6 +50,11 @@ class requestController {
                     new UpdateMemberView($member);
                 }
 
+                if($structuredURI['command'] === "delete"){
+                    $memberId = $structuredURI['id'];
+                    $this->memberController->deleteMember($memberId);
+                }
+
                 if($structuredURI['command'] === 'addMember'){
                     new \view\AddMemberView();
                 };
@@ -75,7 +80,7 @@ class requestController {
             }
 
             if(isset($_POST['updateMemberForm'])){
-                return $this->memberController->updateMember($_POST);
+                return $this->memberController->updateMemberNameAndPersonalNumber($_POST);
             }
         } catch (\Exception $exception){
             return $exception->getMessage();

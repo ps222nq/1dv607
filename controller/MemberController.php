@@ -31,11 +31,12 @@ class MemberController {
         }
     }
 
+
     public function getMembersList(){
         return $this->membersList;
     }
 
-    //TODO: figure out why this is not adding a new member
+
     public function addMember($formData) {
         $message = "";
         try {
@@ -70,20 +71,16 @@ class MemberController {
         return FALSE;
     }
 
-    public function updateMember($formData) {
+    public function updateMemberNameAndPersonalNumber($formData) {
         try{
-            echo "working call";
-            var_dump($formData);
             $id = $formData['id'];
-            $name = $formData['name'];
             $personalNumber = $formData['personalNumber'];
+            $name = $formData['name'];
+            $memberToUpdate = $this->getMember($id);
 
-            foreach ($this->membersList as $member) {
-                if($id === $member->getId()){
-                    $member->setPersonalNumber($personalNumber);
-                    $member->setName($name);
-                }
-            }
+            $memberToUpdate->setName($name);
+            $memberToUpdate->setPersonalNumber($personalNumber);
+
             $this->register->writeData($this->membersList);
 
         } catch (\Exception $e) {
@@ -93,13 +90,25 @@ class MemberController {
     }
 
     public function deleteMember($id) {
-        $memberToDelete = $id;
-
-        foreach ($this->membersList as $member) {
-            if ($member->getId() === $memberToDelete) {
-                unset($member);
+        $count = count($this->membersList);
+        for($i = 0; $i < $count; $i++) {
+            var_dump($i);
+            echo 'ID (passed to deleteMember):   ' . $id . '<br>';
+            //var_dump($this->membersList[1]->getId());
+            var_dump($this->membersList);
+            if(isset($this->membersList[$i])){
+            if ($this->membersList[$i]->getId() == $id){
+                echo "UNSET" . $this->membersList[$i]->toString();
+                unset($this->membersList[$i]);
             }
+
+            }
+
         }
+
+
+        $this->register->writeData($this->membersList);
+
     }
 
     public function getMember($id) {
