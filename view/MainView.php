@@ -12,14 +12,15 @@ use \controller\requestController;
 class MainView {
     private $mainController;
 
-    public function __construct() {
-        $this->renderMenu();
-        $this->mainController = new requestController();
-    }
+    public static $command = '?command=';
+    public static $listCommand = 'list';
+    public static $listVerboseCommand = 'detailed_list';
+    public static $addMemberCommand = 'add_member';
+
 
     public function renderMenu(){
-    echo "<a href='?command=list'>List all members </a><br>";
-    echo "<a href='?command=detailedList'>List all members (Detailed)</a><br>";
-    echo "<a href='?command=addMember'>New member</a><br>";
+    echo "<a href='" . self::$command . self::$listCommand . "'>List all members </a><br>";
+    echo "<a href='" . self::$command . self::$listVerboseCommand . "'>List all members (Detailed)</a><br>";
+    echo "<a href='" . self::$command . self::$addMemberCommand . "'>New member</a><br>";
     }
 }

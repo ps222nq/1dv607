@@ -9,7 +9,6 @@
 namespace controller;
 
 
-class BoatController
-{
+class BoatController {
 
 }
