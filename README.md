@@ -9,7 +9,7 @@ Note: you must be logged in with your LNU email address to view in Draw.io, othe
  
 ### [Workshop resources](http://coursepress.lnu.se/kurs/objektorienterad-analys-och-design-med-uml/workshops-2/workshop-2-design/)
 
-#### Peer reviews
+#### Peer reviews Workshop 2
 ####Group lo222hd
 Source: https://github.com/LindaOtt/1dv607-workshop-2 
 Review: https://docs.google.com/document/d/1BLggs2DjvXPP2yeOyvDMSaZq-fl_Dv3WlcPf64SK7hc/edit
