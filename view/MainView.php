@@ -17,6 +17,10 @@ class MainView {
     public static $listVerboseCommand = 'detailed_list';
     public static $addMemberCommand = 'add_member';
 
+    public function __construct() {
+        $this->renderMenu();
+    }
+
 
     public function renderMenu(){
     echo "<a href='" . self::$command . self::$listCommand . "'>List all members </a><br>";

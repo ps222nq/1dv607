@@ -17,17 +17,12 @@ class requestController {
 
     private $postRequestController;
     private $getRequestController;
-    protected $memberController;
 
 
     public function __construct()
     {
-        new \view\MainView();
-
-        $this->memberController = new MemberController();
         $this->postRequestController = new PostRequestController();
         $this->getRequestController = new GetRequestController();
-
         $this->handleRequestDependingOnPostOrGet();
     }
 
