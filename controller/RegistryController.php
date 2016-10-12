@@ -23,7 +23,8 @@ class RegistryController {
         }
     }
 
-    //Read more about serialize/unserialize and json_decode/encode before changing to alternative method. http://stackoverflow.com/questions/804045/preferred-method-to-store-php-arrays-json-encode-vs-serialize
+    //Warning: Read more about serialize/unserialize and json_decode/encode before changing to alternative method.
+    //http://stackoverflow.com/questions/804045/preferred-method-to-store-php-arrays-json-encode-vs-serialize
     public function getData() {
         try {
             $dataString = file_get_contents(self::$path);

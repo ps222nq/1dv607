@@ -9,31 +9,41 @@ class MemberController {
 
     private $membersList;
     private $register;
-    private $maxID;
 
         public function __construct(){
         $this->register = new \controller\RegistryController();
         $this->membersList = $this->register->getData();
-        $this->setMaxID();
     }
 
 
-    private function setMaxID(){
+    private function getUniqueID(){
         $maxID = 0;
         $memberID = 0;
+
         foreach ($this->membersList as $member) {
             $memberID = $member->getId();
             if($memberID > $maxID){
                 $maxID = $memberID;
             };
-
-            $this->maxID = $maxID;
         }
+
+        //add 1 to the current maximum id to get a unique higher id.
+        return $maxID + 1;
     }
+
 
 
     public function getMembersList(){
         return $this->membersList;
+    }
+
+
+    public function getMemberObjecy($id) {
+        foreach ($this->membersList as $member) {
+            if($member->getId() == $id){
+                return $member;
+            }
+        }
     }
 
 
@@ -42,15 +52,16 @@ class MemberController {
         try {
             $name = $formData["name"];
             $personalNumber = $formData["personalnumber"];
-            $id = $this->maxID + 1;
+            $id = $this->getUniqueID();
+
             $newMember  = new \model\Member($name, $personalNumber, $id);
 
-            if(!$this->isDuplicate($newMember)){
-                array_push($this->membersList, $newMember);
-                $message .= "Created new Member: " . $newMember->toString();
-                $this->register->writeData($this->membersList);
-            } else {
+            if($this->isDuplicate($newMember)){
                 $message .= "Member already exists: " . $newMember->toString();
+            } else {
+                array_push($this->membersList, $newMember);
+                $this->register->writeData($this->membersList);
+                $message .= "Created new Member: " . $newMember->toString();
             }
 
         }
@@ -61,6 +72,7 @@ class MemberController {
         return $message;
 
     }
+
 
     public function isDuplicate($member){
         foreach($this->membersList as $memberFromList){
@@ -76,7 +88,7 @@ class MemberController {
             $id = $formData['id'];
             $personalNumber = $formData['personalNumber'];
             $name = $formData['name'];
-            $memberToUpdate = $this->getMember($id);
+            $memberToUpdate = $this->getMemberObjecy($id);
 
             $memberToUpdate->setName($name);
             $memberToUpdate->setPersonalNumber($personalNumber);
@@ -90,38 +102,31 @@ class MemberController {
     }
 
     public function deleteMember($id) {
-        $count = count($this->membersList);
-        for($i = 0; $i < $count; $i++) {
-            var_dump($i);
-            echo 'ID (passed to deleteMember):   ' . $id . '<br>';
-            //var_dump($this->membersList[1]->getId());
-            var_dump($this->membersList);
-            if(isset($this->membersList[$i])){
-            if ($this->membersList[$i]->getId() == $id){
-                echo "UNSET" . $this->membersList[$i]->toString();
-                unset($this->membersList[$i]);
-            }
-
-            }
-
-        }
-
-
+        $member = $this->getMemberObjecy($id);
+        $index = $this->getListIndexForMember($member);
+        unset($this->membersList[$index]);
         $this->register->writeData($this->membersList);
-
     }
 
-    public function getMember($id) {
+
+    public function getListIndexForMember(\model\Member $memberToGetIndexFor) {
+        $idToMatch =  $memberToGetIndexFor->getId();
+        $index = 0;
         foreach ($this->membersList as $member) {
-            if($member->getId() == $id){
-                return $member;
+            if ($member->getId() == $idToMatch) {
+                break;
             }
-        }
+            //Warning: Do not change, keeps track of index position as the foreach loop iterates.
+            $index++;
+            }
+
+        return $index;
     }
+
+
 
     public function getMemberAssets($formData){
         $memberToGet = $formData["id"];
-        $reg = new RegistryController("../registry.txt");
         $arr = $reg->getData();
 
         foreach ($arr as $a) {
@@ -133,9 +138,6 @@ class MemberController {
 
     public function updateMemberAssets($formData) {
         $memberToGet = $formData["id"];
-        $newAssets = $formData["assets"];
-        $reg = new RegistryController("../registry.txt");
-        $arr = $reg->getData();
 
         foreach ($arr as $a) {
             if($a["id"] === $memberToGet){

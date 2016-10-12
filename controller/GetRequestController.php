@@ -34,7 +34,7 @@ class GetRequestController {
 
         if(isset($this->structuredURI['command'])){
             if($this->structuredURI['command'] === "update"){
-                $member = $this->memberController->getMember($this->structuredURI['id']);
+                $member = $this->memberController->getMemberObjecy($this->structuredURI['id']);
                 new UpdateMemberView($member);
             }
 
