@@ -19,4 +19,16 @@ Source: https://github.com/axnion/1DV607
 Review: https://docs.google.com/document/d/1y47g_JWfMbWLJnuYDFefpMuK9Rn7RDgbBlJgIdAU69M/edit
 
 
+#Get the application up and running
+
+##The Easy Way
+1. [Download and run rlerdorfs preconfigured vagrant box for testing php apps:](https://github.com/rlerdorf/php7dev)
+
+2. Open up a terminal, make sure the vagrant box is running and cd to the path where the box is.
+3. vagrant ssh in to the box
+4. vagrant@php7dev:~$ cd /var/www/default/
+5. vagrant@php7dev:~$ git clone 
+
+##The Hard Way
+To be able to run the application you need an installation of [nginx](https://nginx.org/) and [php7](http://php.net/downloads.php). 
 
