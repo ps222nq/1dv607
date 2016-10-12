@@ -24,7 +24,7 @@ Review: https://docs.google.com/document/d/1y47g_JWfMbWLJnuYDFefpMuK9Rn7RDgbBlJg
 2. Open a terminal window, cd to the path you cloned the box into, make sure the vagrant box is running (execute command: vagrant up)
 3. execute command: vagrant ssh 
 4. vagrant@php7dev:~$ cd /var/www/default/
-..* nginx is sharing this folder as default
+··* nginx is sharing this folder as default
 5. vagrant@php7dev:~$ git clone https://github.com/sebastiangus/1dv607.git
 7. The code is now up and running
 6. Visit your vagrant machines url: http://localhost/1dv607
