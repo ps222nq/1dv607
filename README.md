@@ -21,12 +21,12 @@ Review: https://docs.google.com/document/d/1y47g_JWfMbWLJnuYDFefpMuK9Rn7RDgbBlJg
 
 #Get the application up and running
 1. [Download and run rlerdorfs preconfigured vagrant box for testing php apps:](https://github.com/rlerdorf/php7dev)
-2. Open up a terminal, make sure the vagrant box is running and cd to the path where the box is.
-3. vagrant ssh in to the box
+2. Open a terminal window, cd to the path you cloned the box into, make sure the vagrant box is running (execute command: vagrant up)
+3. execute command: vagrant ssh 
 4. vagrant@php7dev:~$ cd /var/www/default/
+..* nginx is sharing this folder as default
 5. vagrant@php7dev:~$ git clone https://github.com/sebastiangus/1dv607.git
-
-###The code is now runnable
+7. The code is now up and running
 6. Visit your vagrant machines url: http://localhost/1dv607
 
 At this point there is no member register, the file needs to be created and permissions needs to be set to the file for the user www-data.
