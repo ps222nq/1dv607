@@ -28,8 +28,7 @@ Review: https://docs.google.com/document/d/1y47g_JWfMbWLJnuYDFefpMuK9Rn7RDgbBlJg
 5. vagrant@php7dev:~$ git clone https://github.com/sebastiangus/1dv607.git
 7. The code is now up and running
 6. Visit your vagrant machines url: http://localhost/1dv607
-
-At this point there is no member register, the file needs to be created and permissions needs to be set to the file for the user www-data.
+··* At this point there is no member register, the file needs to be created and permissions needs to be set to the file for the user www-data.
 6. vagrant@php7dev:~$ touch /controller/register/registry.txt
 7. vagrant@php7dev:~$ cd /var/www/default/controller/register/
 8. vagrant@php7dev:~$ sudo chown www-data registry.txt (Change owner of the file to www-data)
