@@ -21,14 +21,20 @@ Review: https://docs.google.com/document/d/1y47g_JWfMbWLJnuYDFefpMuK9Rn7RDgbBlJg
 
 #Get the application up and running
 
-##The Easy Way
 1. [Download and run rlerdorfs preconfigured vagrant box for testing php apps:](https://github.com/rlerdorf/php7dev)
 
 2. Open up a terminal, make sure the vagrant box is running and cd to the path where the box is.
 3. vagrant ssh in to the box
 4. vagrant@php7dev:~$ cd /var/www/default/
-5. vagrant@php7dev:~$ git clone 
+5. vagrant@php7dev:~$ git clone https://github.com/sebastiangus/1dv607.git
 
-##The Hard Way
-To be able to run the application you need an installation of [nginx](https://nginx.org/) and [php7](http://php.net/downloads.php). 
+###The code is now runnable
+6. Visit your vagrant machines url: http://localhost/1dv607
 
+At this point there is no member register, the file needs to be created and permissions needs to be set to the file for the user www-data.
+6. vagrant@php7dev:~$ touch /controller/register/registry.txt
+7. vagrant@php7dev:~$ cd /var/www/default/controller/register/
+8. vagrant@php7dev:~$ sudo chown www-data registry.txt (Change owner of the file to www-data)
+9. vagrant@php7dev:~$ sudo chmod 644 registry.txt (Change permission to the file to read write for the owner, and read for the users group and read for everyone. [Read more about chmod and chown](http://www.unixtutorial.org/2014/07/difference-between-chmod-and-chown/)
+
+No the application is up and running with a read and writable registry.txt
