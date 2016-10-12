@@ -28,10 +28,13 @@ Review: https://docs.google.com/document/d/1y47g_JWfMbWLJnuYDFefpMuK9Rn7RDgbBlJg
 5. vagrant@php7dev:~$ git clone https://github.com/sebastiangus/1dv607.git
 7. The code is now up and running
 6. Visit your vagrant machines url: http://localhost/1dv607
-  * At this point there is no member register, the file needs to be created and permissions needs to be set to the file for the user www-data.
+  * At this point there is no member register, the file needs to be created and ownership and write permissions needs to be set to the file, for the user www-data.
 6. vagrant@php7dev:~$ touch /controller/register/registry.txt
+  * This command creates the file without opening the file.
 7. vagrant@php7dev:~$ cd /var/www/default/controller/register/
-8. vagrant@php7dev:~$ sudo chown www-data registry.txt (Change owner of the file to www-data)
-9. vagrant@php7dev:~$ sudo chmod 644 registry.txt (Change permission to the file to read write for the owner, and read for the users group and read for everyone. [Read more about chmod and chown](http://www.unixtutorial.org/2014/07/difference-between-chmod-and-chown/)
+8. vagrant@php7dev:~$ sudo chown www-data registry.txt
+  * Change owner of the file to www-data
+9. vagrant@php7dev:~$ sudo chmod 644 registry.txt 
+  * Adds write permission to the file for the owner, read only for the users group and read only for everyone. [Read more about chmod and chown](http://www.unixtutorial.org/2014/07/difference-between-chmod-and-chown/)
 
 No the application is up and running with a read and writable registry.txt
