@@ -36,7 +36,6 @@ class MemberController {
         }
     }
 
-
     public function addMember($formData) {
         $message = "";
         try {
@@ -62,7 +61,6 @@ class MemberController {
         return $message;
 
     }
-
 
     public function isDuplicate($member){
         foreach($this->membersList as $memberFromList){
@@ -109,7 +107,14 @@ class MemberController {
     public function deleteMember($id) {
         $member = $this->getMemberObject($id);
         $index = $this->getListIndexForMember($member);
+        echo $index;
         unset($this->membersList[$index]);
+
+        //Warning: Do not remove this, added due to unexpected behaviour from unset method when when only one element in array.
+        if(count($this->membersList) === 1 ){
+            $this->membersList = "";
+        }
+
         $this->register->writeData($this->membersList);
     }
 

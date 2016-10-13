@@ -9,14 +9,22 @@ use \controller\iURICommand;
 
 class MemberView implements iURICommand {
 
+    public function __construct(){
+
+    }
+
     public function renderCompactList($data) {
         $res = "<table>";
-
-        foreach($data as $member){
-            $res .= "<tr class='memberRow'>";
-            $res .= "<td>" . $member->getName(). "</td><td>" . $member->getId() . "</td><td>" . $member->getAssetCount() . "</td>";
-            $res .= $this->addLinks($member);
-            $res .= "</tr>";
+        $res .= "<tr>";
+        $res .= "<th>NAME</th><th>ID</th><th>No Of Assets</th>";
+        $res .= "</tr>";
+        if(count($data) !== 0){
+            foreach($data as $member){
+                $res .= "<tr class='memberRow'>";
+                $res .= "<td>" . $member->getName() . "</td><td>" . $member->getId() . "</td><td>" . $member->getAssetCount() . "</td>";
+                $res .= $this->addLinks($member);
+                $res .= "</tr>";
+            }
         }
 
         $res .= "</table>";
@@ -27,15 +35,18 @@ class MemberView implements iURICommand {
 
     public function renderVerboseList($data) {
         $boatView = new BoatView();
-
         $res = "<table>";
-
-        foreach($data as $member){
-            $res .= "<tr class='memberRow'>";
-            $res .= "<td>" . $member->getName() . "</td><td>" . $member->getPersonalNumber() . "</td><td>" . $member->getId() . "</td>";
-            $res .= $this->addLinks($member);
-            $res .= "</tr>";
-            $res .= $boatView->renderBoatList($member->getAssets());
+        $res .= "<tr>";
+        $res .= "<th>NAME</th><th>PERSONAL NUMBER</th><th>ID</th>";
+        $res .= "</tr>";
+        if(count($data) !== 0){
+            foreach($data as $member){
+                $res .= "<tr class='memberRow'>";
+                $res .= "<td>" . $member->getName() . "</td><td>" . $member->getPersonalNumber() . "</td><td>" . $member->getId() . "</td>";
+                $res .= $this->addLinks($member);
+                $res .= "</tr>";
+                $res .= $boatView->renderBoatList($member->getAssets());
+            }
         }
 
         $res .= "</table>";
