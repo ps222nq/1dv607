@@ -2,8 +2,12 @@
 
 namespace controller;
 
+use model\Boat;
+use model\iBoatTypes;
+
 require_once("././model/Member.php");
-require_once ("RegistryController.php");
+require_once('././model/Boat.php');
+require_once("RegistryController.php");
 
 class MemberController {
 
@@ -16,21 +20,6 @@ class MemberController {
     }
 
 
-    private function getUniqueID(){
-        $maxID = 0;
-        $memberID = 0;
-
-        foreach ($this->membersList as $member) {
-            $memberID = $member->getId();
-            if($memberID > $maxID){
-                $maxID = $memberID;
-            };
-        }
-
-        //add 1 to the current maximum id to get a unique higher id.
-        return $maxID + 1;
-    }
-
 
 
     public function getMembersList(){
@@ -38,9 +27,10 @@ class MemberController {
     }
 
 
-    public function getMemberObjecy($id) {
+    public function getMemberObject($id) {
+        $idAsInt = intval($id);
         foreach ($this->membersList as $member) {
-            if($member->getId() == $id){
+            if($member->getId() == $idAsInt){
                 return $member;
             }
         }
@@ -83,12 +73,27 @@ class MemberController {
         return FALSE;
     }
 
+    private function getUniqueID(){
+        $maxID = 0;
+        $memberID = 0;
+
+        foreach ($this->membersList as $member) {
+            $memberID = $member->getId();
+            if($memberID > $maxID){
+                $maxID = $memberID;
+            };
+        }
+
+        //add 1 to the current maximum id to get a unique higher id.
+        return $maxID + 1;
+    }
+
     public function updateMemberNameAndPersonalNumber($formData) {
         try{
             $id = $formData['id'];
             $personalNumber = $formData['personalNumber'];
             $name = $formData['name'];
-            $memberToUpdate = $this->getMemberObjecy($id);
+            $memberToUpdate = $this->getMemberObject($id);
 
             $memberToUpdate->setName($name);
             $memberToUpdate->setPersonalNumber($personalNumber);
@@ -102,14 +107,13 @@ class MemberController {
     }
 
     public function deleteMember($id) {
-        $member = $this->getMemberObjecy($id);
+        $member = $this->getMemberObject($id);
         $index = $this->getListIndexForMember($member);
         unset($this->membersList[$index]);
         $this->register->writeData($this->membersList);
     }
 
-
-    public function getListIndexForMember(\model\Member $memberToGetIndexFor) {
+    private function getListIndexForMember(\model\Member $memberToGetIndexFor) {
         $idToMatch =  $memberToGetIndexFor->getId();
         $index = 0;
         foreach ($this->membersList as $member) {
@@ -123,20 +127,22 @@ class MemberController {
         return $index;
     }
 
-
-
-    public function getMemberAssets($formData){
-        $memberToGet = $formData["id"];
-        $arr = $reg->getData();
-
-        foreach ($arr as $a) {
-            if($a["id"] === $memberToGet){
-                return $a["assets"];
-            }
-        }
+    public function addMemberBoat(){
+        $memberToGet = $_POST['id'];
+        $member = $this->getMemberObject($memberToGet);
+        $member->addAsset(new Boat($_POST['type'], $_POST['length']));
+        $this->register->writeData($this->membersList);
     }
 
-    public function updateMemberAssets($formData) {
+
+    public function getMemberAssets($id){
+        $memberToGet = $id;
+        $member = $this->getMemberObject($memberToGet);
+        $assets = $member->getAssets();
+        return $assets;
+    }
+
+    public function updateMemberAsset($formData) {
         $memberToGet = $formData["id"];
 
         foreach ($arr as $a) {

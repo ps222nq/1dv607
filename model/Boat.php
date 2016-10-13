@@ -6,10 +6,15 @@
  * Time: 09:56
  */
 
+
 namespace model;
 
+use controller\iURICommand;
 
-class Boat {
+require_once('iBoatTypeRestriction.php');
+
+
+class Boat implements iBoatTypeRestriction {
     private $id;
     private $type;
     private $length;
@@ -61,6 +66,16 @@ class Boat {
     private function validateType($type){
         if (!is_string($type)) {
             throw new \Exception("Type must be a string");
+        }
+
+        switch($type){
+            case iBoatTypeRestriction::BOAT_TYPE_1:
+            case iBoatTypeRestriction::BOAT_TYPE_2:
+            case iBoatTypeRestriction::BOAT_TYPE_3:
+            case iBoatTypeRestriction::BOAT_TYPE_4:
+                break;
+            default:
+                throw new \Exception("Type must be of predefined boatType, use values from iBoatTypeRestriction");
         }
     }
 

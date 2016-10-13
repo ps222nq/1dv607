@@ -59,7 +59,7 @@ class Member {
         return  $this->id;
     }
 
-    public function setId($argId) {
+    private function setId($argId) {
         //TODO: more extensive validation
         if(is_numeric($argId) && $argId > 0){
             $this->id = $argId;
@@ -75,6 +75,10 @@ class Member {
 
     public function getAssets(){
         return $this->assets;
+    }
+
+    public function addAsset($asset){
+        array_push($this->assets, $asset);
     }
 }
 ?>

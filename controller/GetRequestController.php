@@ -12,7 +12,9 @@ require_once('./view/AddMemberView.php');
 require_once('./view/MemberView.php');
 require_once('./view/UpdateMemberView.php');
 require_once('./view/MainView.php');
+require_once('./view/AddAssetView.php');
 require_once('RequestController.php');
+require_once('iHTTPCommands.php');
 
 use model\Member;
 use view\MainView;
@@ -33,29 +35,34 @@ class GetRequestController {
         $this->setStructuredURI();
 
         if(isset($this->structuredURI['command'])){
-            if($this->structuredURI['command'] === "update"){
-                $member = $this->memberController->getMemberObjecy($this->structuredURI['id']);
+            if($this->structuredURI['command'] === iURICommand::UPDATE_MEMBER){
+                $member = $this->memberController->getMemberObject($this->structuredURI['id']);
                 new UpdateMemberView($member);
             }
 
-            if($this->structuredURI['command'] === "delete"){
+            if($this->structuredURI['command'] === iURICommand::DELETE_MEMBER){
                 $memberId = $this->structuredURI['id'];
                 $this->memberController->deleteMember($memberId);
             }
 
-            if($this->structuredURI['command'] === MainView::$addMemberCommand){
+            if($this->structuredURI['command'] === iURICommand::ADD_MEMBER_COMMAND){
                 new \view\AddMemberView();
             };
 
-            if($this->structuredURI['command'] === MainView::$listCommand){
+            if($this->structuredURI['command'] === iURICommand::LIST_COMMAND){
                 $mv = new \view\MemberView();
                 $members = $this->memberController->getMembersList();
                 $mv->renderCompactList($members);
             };
-            if($this->structuredURI['command'] === MainView::$listVerboseCommand){
+            if($this->structuredURI['command'] === iURICommand::LIST_VERBOSE_COMMAND){
                 $mv = new \view\MemberView();
                 $members = $this->memberController->getMembersList();
                 $mv->renderVerboseList($members);
+            };
+
+            if($this->structuredURI['command'] === iURICommand::ADD_ASSET){
+                echo 'ASSET VIEW SHOULD BE RENDERED NOW!';
+                $av = new \view\AddAssetView($this->structuredURI['id']);
             };
         }
     }

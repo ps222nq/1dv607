@@ -8,8 +8,9 @@
 namespace test;
 
 require_once('../model/Boat.php');
+namespace('../')
 
-class BoatTest {
+class BoatTest implements  {
 
     public function __construct(){
         $this->shouldCreateBoat();

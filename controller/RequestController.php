@@ -12,7 +12,6 @@ require_once('PostRequestController.php');
 require_once('GetRequestController.php');
 require_once('MemberController.php');
 
-
 class requestController {
 
     private $postRequestController;
