@@ -20,12 +20,9 @@ class MemberController {
     }
 
 
-
-
     public function getMembersList(){
         return $this->membersList;
     }
-
 
     public function getMemberObject($id) {
         $idAsInt = intval($id);
@@ -107,13 +104,13 @@ class MemberController {
     public function deleteMember($id) {
         $member = $this->getMemberObject($id);
         $index = $this->getListIndexForMember($member);
-        echo $index;
-        unset($this->membersList[$index]);
 
         //Warning: Do not remove this, added due to unexpected behaviour from unset method when when only one element in array.
         if(count($this->membersList) === 1 ){
-            $this->membersList = "";
+            unset($this->membersList);
+            $this->membersList = array();
         }
+        unset($this->membersList[$index]);
 
         $this->register->writeData($this->membersList);
     }
@@ -139,12 +136,19 @@ class MemberController {
         $this->register->writeData($this->membersList);
     }
 
-
     public function getMemberAssets($id){
         $memberToGet = $id;
         $member = $this->getMemberObject($memberToGet);
         $assets = $member->getAssets();
         return $assets;
+    }
+
+    public function deleteMemberAsset($id, $assetNumber){
+        $memberId = $id;
+        $assetIndexPosition = $assetNumber - 1;
+        $member = $this->getMemberObject($memberId);
+        $member->deleteAssetAtIndexPosition($assetIndexPosition);
+        $this->register->writeData($this->membersList);
     }
 
     public function updateMemberAsset($formData) {

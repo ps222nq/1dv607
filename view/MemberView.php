@@ -8,10 +8,8 @@ require_once('./controller/iHTTPCommands.php');
 use \controller\iURICommand;
 
 class MemberView implements iURICommand {
+    private $boatView;
 
-    public function __construct(){
-
-    }
 
     public function renderCompactList($data) {
         $res = "<table>";
@@ -34,18 +32,18 @@ class MemberView implements iURICommand {
 
 
     public function renderVerboseList($data) {
-        $boatView = new BoatView();
         $res = "<table>";
-        $res .= "<tr>";
-        $res .= "<th>NAME</th><th>PERSONAL NUMBER</th><th>ID</th>";
-        $res .= "</tr>";
         if(count($data) !== 0){
             foreach($data as $member){
+                $res .= "<tr>";
+                $res .= "<td>NAME</td><td>PERSONAL NUMBER</td><td>ID</td>";
+                $res .= "</tr>";
+                $this->boatView = new \view\BoatView($member);
                 $res .= "<tr class='memberRow'>";
                 $res .= "<td>" . $member->getName() . "</td><td>" . $member->getPersonalNumber() . "</td><td>" . $member->getId() . "</td>";
                 $res .= $this->addLinks($member);
                 $res .= "</tr>";
-                $res .= $boatView->renderBoatList($member->getAssets());
+                $res .= $this->boatView->renderBoatList($member);
             }
         }
 

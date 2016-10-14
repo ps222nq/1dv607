@@ -80,5 +80,14 @@ class Member {
     public function addAsset($asset){
         array_push($this->assets, $asset);
     }
+
+    public function deleteAssetAtIndexPosition($index){
+        if(count($this->assets) === 1 ){
+            unset($this->assets);
+        }
+
+        unset($this->assets[$index]);
+        //Warning: Do not remove this, added due to unexpected behaviour from unset method when when only one element in array.
+    }
 }
 ?>

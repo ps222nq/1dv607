@@ -20,7 +20,7 @@ use model\Member;
 use view\MainView;
 use view\UpdateMemberView;
 
-class GetRequestController {
+class GetRequestController implements iURICommand {
 
     private $structuredURI;
     private $memberController;
@@ -61,8 +61,18 @@ class GetRequestController {
             };
 
             if($this->structuredURI['command'] === iURICommand::ADD_ASSET){
-                echo 'ASSET VIEW SHOULD BE RENDERED NOW!';
-                $av = new \view\AddAssetView($this->structuredURI['id']);
+                $memberToAddAssetTo = $this->structuredURI[iURICommand::ID];
+                $av = new \view\AddAssetView($memberToAddAssetTo);
+            };
+
+            if($this->structuredURI['command'] === iURICommand::DELETE_ASSET){
+                $memberToDeleteAssetFrom =  $this->structuredURI[iURICommand::ID];
+                $assetNumberToDelete = $this->structuredURI[iURICommand::ASSET_NUMBER];
+                $this->memberController->deleteMemberAsset($memberToDeleteAssetFrom, $assetNumberToDelete);
+            };
+
+            if($this->structuredURI['command'] === iURICommand::UPDATE_ASSET){
+                echo 'SHOULD EDIT ASSET!';
             };
         }
     }
