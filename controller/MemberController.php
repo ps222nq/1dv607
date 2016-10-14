@@ -129,7 +129,7 @@ class MemberController {
         return $index;
     }
 
-    public function addMemberBoat(){
+    public function addMemberAsset(){
         $memberToGet = $_POST['id'];
         $member = $this->getMemberObject($memberToGet);
         $member->addAsset(new Boat($_POST['type'], $_POST['length']));
@@ -151,14 +151,13 @@ class MemberController {
         $this->register->writeData($this->membersList);
     }
 
-    public function updateMemberAsset($formData) {
-        $memberToGet = $formData["id"];
-
-        foreach ($arr as $a) {
-            if($a["id"] === $memberToGet){
-                $a["assets"] = $newAssets;
-            }
-        }
+    public function updateMemberAsset() {
+        $memberToGet = $_POST[iURICommand::ID];
+        $member = $this->getMemberObject($memberToGet);
+        $assetIndex = $_POST[iURICommand::ASSET_NUMBER];
+        $boat = new \model\Boat($_POST['type'], $_POST['length']);
+        $member->replaceAssetAtIndexPositionWithAsset($assetIndex, $boat);
+        $this->register->writeData($this->membersList);
     }
 
     public function executeMethodOnAsset($methodToExecute, $formData){

@@ -13,6 +13,7 @@ require_once('./view/MemberView.php');
 require_once('./view/UpdateMemberView.php');
 require_once('./view/MainView.php');
 require_once('./view/AddAssetView.php');
+require_once('./view/UpdateAssetView.php');
 require_once('RequestController.php');
 require_once('iHTTPCommands.php');
 
@@ -72,7 +73,11 @@ class GetRequestController implements iURICommand {
             };
 
             if($this->structuredURI['command'] === iURICommand::UPDATE_ASSET){
-                echo 'SHOULD EDIT ASSET!';
+                $memberId = $this->structuredURI[iURICommand::ID];
+                $member = $this->memberController->getMemberObject($memberId);
+                $assetIndexPosition = $this->structuredURI[iURICommand::ASSET_NUMBER] - 1;
+                $assetToUpdate = $member->getAssetFromIndexPosition($assetIndexPosition);
+                $uav = new \view\UpdateAssetView($member, $assetIndexPosition, $assetToUpdate);
             };
         }
     }

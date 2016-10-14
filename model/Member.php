@@ -77,6 +77,10 @@ class Member {
         return $this->assets;
     }
 
+    public function getAssetFromIndexPosition($index){
+        return $this->assets[$index];
+    }
+
     public function addAsset($asset){
         array_push($this->assets, $asset);
     }
@@ -84,10 +88,15 @@ class Member {
     public function deleteAssetAtIndexPosition($index){
         if(count($this->assets) === 1 ){
             unset($this->assets);
+            $this->assets = array();
         }
 
         unset($this->assets[$index]);
         //Warning: Do not remove this, added due to unexpected behaviour from unset method when when only one element in array.
+    }
+
+    public function replaceAssetAtIndexPositionWithAsset($index, \model\Boat $replaceWith){
+        $this->assets[$index] = $replaceWith;
     }
 }
 ?>

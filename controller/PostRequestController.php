@@ -32,7 +32,7 @@ public function __construct()
             }
 
             if(isset($_POST['addAssetForm'])){
-                return $this->memberController->addMemberBoat($_POST);
+                return $this->memberController->addMemberAsset($_POST);
             }
 
             if(isset($_POST['updateAssetForm'])){
