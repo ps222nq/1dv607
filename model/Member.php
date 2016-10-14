@@ -78,7 +78,9 @@ class Member {
     }
 
     public function getAssetFromIndexPosition($index){
+        if(isset($this->assets[$index])){
         return $this->assets[$index];
+        }
     }
 
     public function addAsset($asset){
