@@ -4,9 +4,15 @@
 
 ### Please send email to sg222pm@student.lnu.se for link to live demo
 
-### [Link to diagrams](https://drive.google.com/file/d/0B4Dl3vAlGIepN25NSlJTT0V3QUU/view?usp=sharing)
+### Link to diagrams
 Note: you must be logged in with your LNU email address to view in Draw.io, otherwise preview resolution is very low
- 
+
+[Link to Create Member sequence diagram](https://drive.google.com/file/d/0B4Dl3vAlGIepQUE5TEVscFVMUmM/view?usp=sharing)
+[Link to List Member sequence diagram](https://drive.google.com/file/d/0B4Dl3vAlGIepRFVhM0hZOG1uenM/view?usp=sharing)
+
+[Link to overview of classes](https://drive.google.com/file/d/0B4Dl3vAlGIepTDYzSWw3WlY1WkU/view?usp=sharing)
+[Link to previous class and sequence diagrams](https://drive.google.com/file/d/0B4Dl3vAlGIepN25NSlJTT0V3QUU/view?usp=sharing)
+
 ### [Workshop resources](http://coursepress.lnu.se/kurs/objektorienterad-analys-och-design-med-uml/workshops-2/workshop-2-design/)
 
 #### Peer reviews Workshop 2
