@@ -22,7 +22,7 @@ class BoatTest {
     private function shouldCreateBoat(){
         $shouldType = "Other";
         $shouldLength = 123;
-        $sut = new \model\Boat($shouldType, $shouldLength);
+        $sut = new Boat($shouldType, $shouldLength);
         if($sut->getType() === $shouldType){
             echo "<li>Boat created with correct type</li>";
         }
@@ -34,7 +34,7 @@ class BoatTest {
         $shouldLength = 123;
         $expected = 'Type must be a string';
         try{
-            new \model\Boat($shouldType, $shouldLength);
+            new Boat($shouldType, $shouldLength);
 
         } catch(\Exception $exception) {
             if($exception->getMessage() === $expected){
@@ -49,7 +49,7 @@ class BoatTest {
         $shouldLength = "Other";
         $expected = 'Length must be numeric';
         try{
-            new \model\Boat($shouldType, $shouldLength);
+            new Boat($shouldType, $shouldLength);
         } catch(\Exception $exception) {
             if($exception->getMessage() === $expected){
                 echo "<li>shouldThrowExceptionInvalidFormatParam1 working</li>";
@@ -60,7 +60,7 @@ class BoatTest {
 
     private function shouldReturnLength(){
         $expected = 10;
-        $sut = new \model\Boat("Type", $expected);
+        $sut = new Boat("Type", $expected);
         $returns = $sut->getLength();
         if($returns === $expected){
             echo "<li>shouldReturnLength working</li>";
@@ -70,7 +70,7 @@ class BoatTest {
 
     private function shouldReturnType(){
         $expected = "BoatType";
-        $sut = new \model\Boat($expected, 10);
+        $sut = new Boat($expected, 10);
         $returns = $sut->getType();
         if($returns === $expected){
             echo "<li>shouldReturnType working</li>";

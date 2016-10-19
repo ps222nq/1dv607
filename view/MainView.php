@@ -10,7 +10,6 @@ use controller\URICommand;
 
 
 class MainView {
-    private $mainController;
 
     public function __construct() {
         $this->renderMenu();

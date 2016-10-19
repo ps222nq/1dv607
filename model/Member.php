@@ -1,6 +1,7 @@
 <?php
 namespace model;
 
+
 class Member {
 
     private $name;
@@ -15,10 +16,6 @@ class Member {
         $this->setId($cId);
     }
 
-    public function toString(){
-
-        return "Name: " . $this->name . ", Personal Number: " . $this->personalNumber . ", ID: " . $this->id;
-    }
 
     public function getName() {
         return  $this->name;
@@ -38,7 +35,6 @@ class Member {
     }
 
     function isValidPNR($pnr) {
-        $yearOfBirth = 0;
         if(strlen($pnr) !== 13) {
             throw new \Exception("Please enter personal number in format YYYYMMDD-XXXX");
         } else {
@@ -95,7 +91,7 @@ class Member {
         $this->assets = $mergedArrays;
     }
 
-    public function replaceAssetAtIndexPositionWithAsset($index, \model\Boat $replaceWith){
+    public function replaceAssetAtIndexPositionWithAsset($index, Boat $replaceWith){
         $this->assets[$index] = $replaceWith;
     }
 }

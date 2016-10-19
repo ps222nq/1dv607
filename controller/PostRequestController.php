@@ -32,15 +32,14 @@ public function __construct()
             }
 
             if(isset($_POST['addAssetForm'])){
-                return $this->memberController->addMemberAsset($_POST);
+                $this->memberController->addMemberAsset();
             }
 
             if(isset($_POST['updateAssetForm'])){
-                return $this->memberController->updateMemberAsset($_POST);
+                $this->memberController->updateMemberAsset();
             }
         } catch (\Exception $exception){
             return $exception->getMessage();
         }
     }
-
 }

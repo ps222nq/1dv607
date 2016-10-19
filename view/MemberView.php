@@ -42,7 +42,7 @@ class MemberView {
                 $res .= "<td>" . $member->getName() . "</td><td>" . $member->getPersonalNumber() . "</td><td>" . $member->getId() . "</td>";
                 $res .= $this->addLinks($member);
                 $res .= "</tr>";
-                $res .= $this->boatView->renderBoatList($member);
+                $res .= $this->boatView->renderBoatList();
             }
         }
 

@@ -8,17 +8,19 @@
 
 namespace controller;
 
-require_once('./view/AddMemberView.php');
-require_once('./view/MemberView.php');
-require_once('./view/UpdateMemberView.php');
-require_once('./view/MainView.php');
-require_once('./view/AddAssetView.php');
-require_once('./view/UpdateAssetView.php');
+require_once('././view/AddMemberView.php');
+require_once('././view/MemberView.php');
+require_once('././view/UpdateMemberView.php');
+require_once('././view/MainView.php');
+require_once('././view/AddAssetView.php');
+require_once('././view/UpdateAssetView.php');
 require_once('RequestController.php');
 
-use model\Member;
-use view\MainView;
 use view\UpdateMemberView;
+use view\MemberView;
+use view\AddMemberView;
+use view\AddAssetView;
+use view\UpdateAssetView;
 
 class GetRequestController {
 
@@ -46,23 +48,23 @@ class GetRequestController {
             }
 
             if($this->structuredURI['command'] === URICommand::ADD_MEMBER_COMMAND){
-                new \view\AddMemberView();
+                new AddMemberView();
             };
 
             if($this->structuredURI['command'] === URICommand::LIST_COMMAND){
-                $mv = new \view\MemberView();
+                $mv = new MemberView();
                 $members = $this->memberController->getMembersList();
                 $mv->renderCompactList($members);
             };
             if($this->structuredURI['command'] === URICommand::LIST_VERBOSE_COMMAND){
-                $mv = new \view\MemberView();
+                $mv = new MemberView();
                 $members = $this->memberController->getMembersList();
                 $mv->renderVerboseList($members);
             };
 
             if($this->structuredURI['command'] === URICommand::ADD_ASSET){
                 $memberToAddAssetTo = $this->structuredURI[URICommand::ID];
-                $av = new \view\AddAssetView($memberToAddAssetTo);
+                new AddAssetView($memberToAddAssetTo);
             };
 
             if($this->structuredURI['command'] === URICommand::DELETE_ASSET){
@@ -75,7 +77,7 @@ class GetRequestController {
                 $memberId = $this->structuredURI[URICommand::ID];
                 $member = $this->memberController->getMemberObject($memberId);
                 $assetNumber = $this->structuredURI[URICommand::ASSET_NUMBER];
-                $uav = new \view\UpdateAssetView($member, $assetNumber);
+                new UpdateAssetView($member, $assetNumber);
             };
         }
     }
@@ -94,8 +96,8 @@ class GetRequestController {
         //http://stackoverflow.com/questions/3833876/create-associative-array-from-foreach-loop-php
         if(count($uriParts) > 0 && strlen($_SERVER['QUERY_STRING']) > 0){
             foreach ($uriParts as $part) {
-                $separeatedParts = explode('=',$part);
-                $this->structuredURI[$separeatedParts[0]] = $separeatedParts[1];
+                $separatedParts = explode('=',$part);
+                $this->structuredURI[$separatedParts[0]] = $separatedParts[1];
             }
         }
     }

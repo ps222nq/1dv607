@@ -12,5 +12,3 @@ $mv = new \view\MainView();
 $rc = new \controller\RequestController();
 
 //TODO: Instantiate view objects
-
-?>

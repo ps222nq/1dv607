@@ -15,7 +15,6 @@ require_once('BoatTypeRestriction.php');
 
 
 class Boat {
-    private $id;
     private $type;
     private $length;
 

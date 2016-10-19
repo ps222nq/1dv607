@@ -11,8 +11,6 @@ namespace test;
 require_once('../view/MemberView.php');
 require_once ('../model/Member.php');
 
-use \view\MemberView;
-
 class MemberViewTest
 {
     public function __construct()

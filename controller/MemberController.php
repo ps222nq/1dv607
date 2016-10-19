@@ -3,11 +3,12 @@
 namespace controller;
 
 use model\Boat;
-use model\iBoatTypes;
 
 require_once("././model/Member.php");
 require_once('././model/Boat.php');
 require_once("RegistryController.php");
+
+
 
 class MemberController {
 
@@ -15,7 +16,7 @@ class MemberController {
     private $register;
 
         public function __construct(){
-        $this->register = new \controller\RegistryController();
+        $this->register = new RegistryController();
         $this->membersList = $this->register->getData();
     }
 
@@ -43,11 +44,10 @@ class MemberController {
             $newMember  = new \model\Member($name, $personalNumber, $id);
 
             if($this->isDuplicate($newMember)){
-                $message .= "Member already exists: " . $newMember->toString();
+                $message .= "Member already exists";
             } else {
                 array_push($this->membersList, $newMember);
                 $this->register->writeData($this->membersList);
-                $message .= "Created new Member: " . $newMember->toString();
             }
 
         }
