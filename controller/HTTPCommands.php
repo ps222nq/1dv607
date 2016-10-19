@@ -7,7 +7,7 @@
  */
 namespace controller;
 
-interface iURICommand {
+class URICommand {
     const COMMAND_PREFIX = '?command=';
 
     const LIST_COMMAND =  'list';

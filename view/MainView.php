@@ -3,13 +3,13 @@
 namespace view;
 
 
-require_once('././controller/iHTTPCommands.php');
+require_once('././controller/HTTPCommands.php');
 
-use controller\iURICommand;
+use controller\URICommand;
 
 
 
-class MainView implements iURICommand {
+class MainView {
     private $mainController;
 
     public function __construct() {
@@ -18,8 +18,8 @@ class MainView implements iURICommand {
 
 
     public function renderMenu(){
-    echo "<a href='" . iURICommand::COMMAND_PREFIX . iURICommand::LIST_COMMAND . "'>List all members </a><br>";
-    echo "<a href='" . iURICommand::COMMAND_PREFIX . iURICommand::LIST_VERBOSE_COMMAND . "'>List all members (Detailed)</a><br>";
-    echo "<a href='" . iURICommand::COMMAND_PREFIX . iURICommand::ADD_MEMBER_COMMAND . "'>New member</a><br>";
+    echo "<a href='" . URICommand::COMMAND_PREFIX . URICommand::LIST_COMMAND . "'>List all members </a><br>";
+    echo "<a href='" . URICommand::COMMAND_PREFIX . URICommand::LIST_VERBOSE_COMMAND . "'>List all members (Detailed)</a><br>";
+    echo "<a href='" . URICommand::COMMAND_PREFIX . URICommand::ADD_MEMBER_COMMAND . "'>New member</a><br>";
     }
 }

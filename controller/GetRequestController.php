@@ -15,13 +15,12 @@ require_once('./view/MainView.php');
 require_once('./view/AddAssetView.php');
 require_once('./view/UpdateAssetView.php');
 require_once('RequestController.php');
-require_once('iHTTPCommands.php');
 
 use model\Member;
 use view\MainView;
 use view\UpdateMemberView;
 
-class GetRequestController implements iURICommand {
+class GetRequestController {
 
     private $structuredURI;
     private $memberController;
@@ -36,48 +35,47 @@ class GetRequestController implements iURICommand {
         $this->setStructuredURI();
 
         if(isset($this->structuredURI['command'])){
-            if($this->structuredURI['command'] === iURICommand::UPDATE_MEMBER){
+            if($this->structuredURI['command'] === URICommand::UPDATE_MEMBER){
                 $member = $this->memberController->getMemberObject($this->structuredURI['id']);
                 new UpdateMemberView($member);
             }
 
-            if($this->structuredURI['command'] === iURICommand::DELETE_MEMBER){
+            if($this->structuredURI['command'] === URICommand::DELETE_MEMBER){
                 $memberId = $this->structuredURI['id'];
                 $this->memberController->deleteMember($memberId);
             }
 
-            if($this->structuredURI['command'] === iURICommand::ADD_MEMBER_COMMAND){
+            if($this->structuredURI['command'] === URICommand::ADD_MEMBER_COMMAND){
                 new \view\AddMemberView();
             };
 
-            if($this->structuredURI['command'] === iURICommand::LIST_COMMAND){
+            if($this->structuredURI['command'] === URICommand::LIST_COMMAND){
                 $mv = new \view\MemberView();
                 $members = $this->memberController->getMembersList();
                 $mv->renderCompactList($members);
             };
-            if($this->structuredURI['command'] === iURICommand::LIST_VERBOSE_COMMAND){
+            if($this->structuredURI['command'] === URICommand::LIST_VERBOSE_COMMAND){
                 $mv = new \view\MemberView();
                 $members = $this->memberController->getMembersList();
                 $mv->renderVerboseList($members);
             };
 
-            if($this->structuredURI['command'] === iURICommand::ADD_ASSET){
-                $memberToAddAssetTo = $this->structuredURI[iURICommand::ID];
+            if($this->structuredURI['command'] === URICommand::ADD_ASSET){
+                $memberToAddAssetTo = $this->structuredURI[URICommand::ID];
                 $av = new \view\AddAssetView($memberToAddAssetTo);
             };
 
-            if($this->structuredURI['command'] === iURICommand::DELETE_ASSET){
-                $memberToDeleteAssetFrom =  $this->structuredURI[iURICommand::ID];
-                $assetNumberToDelete = $this->structuredURI[iURICommand::ASSET_NUMBER];
+            if($this->structuredURI['command'] === URICommand::DELETE_ASSET){
+                $memberToDeleteAssetFrom =  $this->structuredURI[URICommand::ID];
+                $assetNumberToDelete = $this->structuredURI[URICommand::ASSET_NUMBER];
                 $this->memberController->deleteMemberAsset($memberToDeleteAssetFrom, $assetNumberToDelete);
             };
 
-            if($this->structuredURI['command'] === iURICommand::UPDATE_ASSET){
-                $memberId = $this->structuredURI[iURICommand::ID];
+            if($this->structuredURI['command'] === URICommand::UPDATE_ASSET){
+                $memberId = $this->structuredURI[URICommand::ID];
                 $member = $this->memberController->getMemberObject($memberId);
-                $assetIndexPosition = $this->structuredURI[iURICommand::ASSET_NUMBER] - 1;
-                $assetToUpdate = $member->getAssetFromIndexPosition($assetIndexPosition);
-                $uav = new \view\UpdateAssetView($member, $assetIndexPosition, $assetToUpdate);
+                $assetNumber = $this->structuredURI[URICommand::ASSET_NUMBER];
+                $uav = new \view\UpdateAssetView($member, $assetNumber);
             };
         }
     }

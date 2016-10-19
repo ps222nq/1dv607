@@ -11,10 +11,10 @@ namespace model;
 
 use controller\iURICommand;
 
-require_once('iBoatTypeRestriction.php');
+require_once('BoatTypeRestriction.php');
 
 
-class Boat implements iBoatTypeRestriction {
+class Boat {
     private $id;
     private $type;
     private $length;
@@ -32,11 +32,6 @@ class Boat implements iBoatTypeRestriction {
 
     public function toString(){
         return "Type: " . $this->type . ", Length: " . $this->length;
-    }
-
-
-    public function getId(){
-        return $this->id;
     }
 
     public function setLength($length){
@@ -69,10 +64,10 @@ class Boat implements iBoatTypeRestriction {
         }
 
         switch($type){
-            case iBoatTypeRestriction::BOAT_TYPE_1:
-            case iBoatTypeRestriction::BOAT_TYPE_2:
-            case iBoatTypeRestriction::BOAT_TYPE_3:
-            case iBoatTypeRestriction::BOAT_TYPE_4:
+            case BoatTypeRestriction::BOAT_TYPE_1:
+            case BoatTypeRestriction::BOAT_TYPE_2:
+            case BoatTypeRestriction::BOAT_TYPE_3:
+            case BoatTypeRestriction::BOAT_TYPE_4:
                 break;
             default:
                 throw new \Exception("Type must be of predefined boatType, use values from iBoatTypeRestriction");

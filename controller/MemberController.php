@@ -152,23 +152,11 @@ class MemberController {
     }
 
     public function updateMemberAsset() {
-        $memberToGet = $_POST[iURICommand::ID];
+        $memberToGet = $_POST[URICommand::ID];
         $member = $this->getMemberObject($memberToGet);
-        $assetIndex = $_POST[iURICommand::ASSET_NUMBER];
+        $assetIndex = $_POST[URICommand::ASSET_NUMBER] - 1;
         $boat = new \model\Boat($_POST['type'], $_POST['length']);
         $member->replaceAssetAtIndexPositionWithAsset($assetIndex, $boat);
         $this->register->writeData($this->membersList);
-    }
-
-    public function executeMethodOnAsset($methodToExecute, $formData){
-        $memberToExecuteFunctionOn = $formData["id"];
-        $reg = new RegistryController("../registry.txt");
-        $arr = $reg->getData();
-
-        foreach ($arr as $a) {
-            if ($a["id"] === $memberToExecuteFunctionOn) {
-                $methodToExecute($a);
-            }
-        }
     }
 }

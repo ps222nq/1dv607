@@ -9,7 +9,7 @@
 namespace model;
 
 
-interface iBoatTypeRestriction
+class BoatTypeRestriction
 {
 const BOAT_TYPE_1 = 'Sailboat';
 const BOAT_TYPE_2 = 'Motorsailer';

@@ -8,11 +8,9 @@
 
 namespace view;
 
+use model\BoatTypeRestriction;
 
-use model\iBoatTypeRestriction;
-
-class AddAssetView implements iBoatTypeRestriction
-{
+class AddAssetView {
 
     public function __construct($id){
         $this->renderRegistrationForm($id);
@@ -22,10 +20,10 @@ class AddAssetView implements iBoatTypeRestriction
         $res  =  "<form action='index.php'  method='post'>";
         $res .= "<input type='hidden' name='id' value='" . $id . "'><br>";
         $res .= "Type <select name='type'><br>";
-        $res .= "<option value='" . iBoatTypeRestriction::BOAT_TYPE_1 . "'>" . iBoatTypeRestriction::BOAT_TYPE_1 . "</option>";
-        $res .= "<option value='" . iBoatTypeRestriction::BOAT_TYPE_2 . "'>" . iBoatTypeRestriction::BOAT_TYPE_2 . "</option>";
-        $res .= "<option value='" . iBoatTypeRestriction::BOAT_TYPE_3 . "'>" . iBoatTypeRestriction::BOAT_TYPE_3 . "</option>";
-        $res .= "<option value='" . iBoatTypeRestriction::BOAT_TYPE_4 . "'>" . iBoatTypeRestriction::BOAT_TYPE_4 . "</option>";
+        $res .= "<option value='" . BoatTypeRestriction::BOAT_TYPE_1 . "'>" . BoatTypeRestriction::BOAT_TYPE_1 . "</option>";
+        $res .= "<option value='" . BoatTypeRestriction::BOAT_TYPE_2 . "'>" . BoatTypeRestriction::BOAT_TYPE_2 . "</option>";
+        $res .= "<option value='" . BoatTypeRestriction::BOAT_TYPE_3 . "'>" . BoatTypeRestriction::BOAT_TYPE_3 . "</option>";
+        $res .= "<option value='" . BoatTypeRestriction::BOAT_TYPE_4 . "'>" . BoatTypeRestriction::BOAT_TYPE_4 . "</option>";
         $res .= "</select><br>";
         $res .= "Length <input type='text' name='length'><br>";
         $res .= "<input type='submit' value='add asset' name='addAssetForm'>";

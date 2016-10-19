@@ -2,11 +2,11 @@
 
 namespace view;
 
-use controller\iURICommand;
+use controller\URICommand;
 
-require_once('./controller/iHTTPCommands.php');
+require_once('./controller/HTTPCommands.php');
 
-class BoatView implements iURICommand {
+class BoatView {
     private $member;
     private $assets;
     private $boatNumber;
@@ -36,8 +36,8 @@ class BoatView implements iURICommand {
     }
 
     public function addLinks() {
-        $res = "<td><a href='" . iURICommand::COMMAND_PREFIX . iURICommand::DELETE_ASSET . iURICommand::ID_PREFIX . $this->member->getId() . iURICommand::ASSET_NUMBER_PREFIX . $this->boatNumber . "'> Delete </td>";
-        $res .= "<td><a href='" . iURICommand::COMMAND_PREFIX . iURICommand::UPDATE_ASSET . iURICommand::ID_PREFIX .  $this->member->getId() . iURICommand::ASSET_NUMBER_PREFIX . $this->boatNumber . "'> Edit </td>";
+        $res = "<td><a href='" . URICommand::COMMAND_PREFIX . URICommand::DELETE_ASSET . URICommand::ID_PREFIX . $this->member->getId() . URICommand::ASSET_NUMBER_PREFIX . $this->boatNumber . "'> Delete </td>";
+        $res .= "<td><a href='" . URICommand::COMMAND_PREFIX . URICommand::UPDATE_ASSET . URICommand::ID_PREFIX .  $this->member->getId() . URICommand::ASSET_NUMBER_PREFIX . $this->boatNumber . "'> Edit </td>";
         return $res;
     }
 }

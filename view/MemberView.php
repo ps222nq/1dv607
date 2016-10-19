@@ -3,11 +3,10 @@
 namespace view;
 
 require_once('BoatView.php');
-require_once('./controller/iHTTPCommands.php');
 
-use \controller\iURICommand;
+use \controller\URICommand;
 
-class MemberView implements iURICommand {
+class MemberView {
     private $boatView;
 
 
@@ -53,9 +52,9 @@ class MemberView implements iURICommand {
     }
 
     public function addLinks($member) {
-        $res = "<td><a href='" . iURICommand::COMMAND_PREFIX . iURICommand::DELETE_MEMBER . iURICommand::ID_PREFIX . $member->getId() . "'> Delete </td>";
-        $res .= "<td><a href='" . iURICommand::COMMAND_PREFIX . iURICommand::UPDATE_MEMBER . iURICommand::ID_PREFIX .  $member->getId() . "'> Edit </td>";
-        $res .= "<td><a href='" . iURICommand::COMMAND_PREFIX . iURICommand::ADD_ASSET . iURICommand::ID_PREFIX . $member->getId() . "'> Add asset </td>";
+        $res = "<td><a href='" . URICommand::COMMAND_PREFIX . URICommand::DELETE_MEMBER . URICommand::ID_PREFIX . $member->getId() . "'> Delete </td>";
+        $res .= "<td><a href='" . URICommand::COMMAND_PREFIX . URICommand::UPDATE_MEMBER . URICommand::ID_PREFIX .  $member->getId() . "'> Edit </td>";
+        $res .= "<td><a href='" . URICommand::COMMAND_PREFIX . URICommand::ADD_ASSET . URICommand::ID_PREFIX . $member->getId() . "'> Add asset </td>";
 
         return $res;
     }
